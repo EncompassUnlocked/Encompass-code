@@ -1,0 +1,20 @@
+site_name: Encompass Unlocked
+site_description: A community library of Encompass web code and tutorials
+theme:
+  name: material
+  palette:
+    primary: teal
+    accent: teal
+  features:
+    - navigation.tabs
+    - navigation.top
+    - content.code.copy
+
+nav:
+  - Home: index.md
+  - Forms & Fields:
+      - Custom Fields: forms/custom-fields.md
+  - Workflows:
+      - Conditions: workflows/conditions.md
+  - Reports & Data:
+      - Loan Queries: reports/loan-queries.md
