@@ -12,6 +12,16 @@ theme:
 
 nav:
   - Home: index.md
+  - Web Code:
+      - Button clicks:
+          - Button hard stop: web-code/button-clicks/button-hard-stop.md
+          - Button click to standard page: web-code/button-clicks/button-click-standard-page.md
+          - Button goto tool: web-code/button-clicks/button-goto-tool.md
+          - Button field update: web-code/button-clicks/button-field-update.md
+          - Button conditional field color: web-code/button-clicks/button-conditional-field-color.md
+          - Button modal: web-code/button-clicks/button-modal.md
+      - Field logging:
+          - Button field logging and audit trail: web-code/field-logging/button-field-logging-audit-trail.md
   - Forms & Fields:
       - Custom Fields: forms/custom-fields.md
   - Workflows:

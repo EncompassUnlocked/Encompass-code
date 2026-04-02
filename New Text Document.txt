@@ -1,0 +1,2 @@
+cd C:\Users\bethb\encompass-unlocked
+py -m mkdocs serve
