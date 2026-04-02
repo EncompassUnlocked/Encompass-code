@@ -22,9 +22,5 @@ nav:
           - Button modal: web-code/button-clicks/button-modal.md
       - Field logging:
           - Button field logging and audit trail: web-code/field-logging/button-field-logging-audit-trail.md
-  - Forms & Fields:
-      - Custom Fields: forms/custom-fields.md
-  - Workflows:
-      - Conditions: workflows/conditions.md
-  - Reports & Data:
-      - Loan Queries: reports/loan-queries.md
+  - Skills:
+      - Using Skills with Claude: skills/index.md
