@@ -26,3 +26,4 @@ nav:
       - Using Skills with Claude: skills/index.md
       - Available Skills:
           - Encompass Scripting Framework: skills/encompass-scripting-framework/SKILL.md
+	  - Field Triggers: docs/skills/Field Triggers/SKILL.md
