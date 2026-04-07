@@ -6,7 +6,8 @@
       <meta charset="utf-8">
       <meta name="viewport" content="width=device-width,initial-scale=1">
       
-        <meta name="description" content="A community library of Encompass web code and tutorials">
+        <meta name="description" content="Use this skill whenever the user wants to create, write, explain, or troubleshoot Loan Custom Field calculations in Encompass (by Ellie Mae / ICE Mortgage Technology). This includes arithmetic calculations, date math, text manipulation, IIF branching logic, list/range lookups, and safe operators for custom fields. Trigger this skill any time the user mentions Encompass custom fields, CX. fields, loan custom field calculations, CUST01FV, or asks how to calculate, populate, or derive a value in a custom Encompass field — even if they don't use the phrase "loan custom fields."
+">
       
       
       
@@ -70,6 +71,11 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
     <div data-md-component="skip">
+      
+        
+        <a href="#encompass-loan-custom-field-calculations" class="md-skip">
+          Skip to content
+        </a>
       
     </div>
     <div data-md-component="announce">
@@ -872,6 +878,26 @@
       <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
       
       
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Custom Field Code
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
       
       <a href="./" class="md-nav__link md-nav__link--active">
         
@@ -889,6 +915,191 @@
   
 
       </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background-what-are-loan-custom-field-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background: What Are Loan Custom Field Calculations?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background: What Are Loan Custom Field Calculations?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-set-up-a-custom-field-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Set Up a Custom Field Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-loan-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencing Loan Fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-arithmetic-use-when-fields-may-be-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Arithmetic (use when fields may be empty)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-string-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text (String) Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-based-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calendar-Based Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching-and-logic-iif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branching and Logic (IIF)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-and-range-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List and Range Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculation-errors-and-how-to-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculation Errors and How to Avoid Them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-vbnet-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced: VB.NET Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-field-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Field IDs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
       
     </li>
   
@@ -927,6 +1138,182 @@
   
   
   
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background-what-are-loan-custom-field-calculations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background: What Are Loan Custom Field Calculations?
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Background: What Are Loan Custom Field Calculations?">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#how-to-set-up-a-custom-field-calculation" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        How to Set Up a Custom Field Calculation
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#referencing-loan-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Referencing Loan Fields
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#arithmetic-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Arithmetic Operations
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Arithmetic Operations">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#safe-arithmetic-use-when-fields-may-be-empty" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Safe Arithmetic (use when fields may be empty)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#math-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Math Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#text-string-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Text (String) Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#date-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Date Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calendar-based-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calendar-Based Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#branching-and-logic-iif" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Branching and Logic (IIF)
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#list-and-range-operations" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        List and Range Operations
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#calculation-errors-and-how-to-avoid-them" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Calculation Errors and How to Avoid Them
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#advanced-vbnet-functions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Advanced: VB.NET Functions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-field-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Field IDs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
   
 </nav>
                   </div>
@@ -943,289 +1330,573 @@
 
 
 
-  <h1>Custom Field Code</h1>
-
-<p>---</p>
-<p>name: encompass-loan-custom-fields</p>
-<p>description: &gt;</p>
-<p>&#x20; Use this skill whenever the user wants to create, write, explain, or troubleshoot</p>
-<p>&#x20; Loan Custom Field calculations in Encompass (by Ellie Mae / ICE Mortgage Technology).</p>
-<p>&#x20; This includes arithmetic calculations, date math, text manipulation, IIF branching</p>
-<p>&#x20; logic, list/range lookups, and safe operators for custom fields. Trigger this skill</p>
-<p>&#x20; any time the user mentions Encompass custom fields, CX. fields, loan custom field</p>
-<p>&#x20; calculations, CUST01FV, or asks how to calculate, populate, or derive a value</p>
-<p>&#x20; in a custom Encompass field — even if they don't use the phrase "loan custom fields."</p>
-<p>---</p>
-<p># Encompass Loan Custom Field Calculations</p>
-<p>This skill helps you write, explain, and troubleshoot Loan Custom Field calculations</p>
-<p>in Encompass. It covers all supported expression types, safe operators, and common pitfalls.</p>
-<p>---</p>
-<p>## Background: What Are Loan Custom Field Calculations?</p>
-<p>Encompass lets you define custom fields (e.g., <code>CUST01FV</code> or <code>CX.MYFIELD</code>) that</p>
-<p>**automatically compute their value** from an expression you write. Unlike Advanced</p>
-<p>Coding (VB.NET), custom field calculations use a **dedicated expression engine** with</p>
-<p>a simpler syntax — no If/End If blocks, just inline expressions.</p>
+<h1 id="encompass-loan-custom-field-calculations">Encompass Loan Custom Field Calculations</h1>
+<p>This skill helps you write, explain, and troubleshoot Loan Custom Field calculations
+in Encompass. It covers all supported expression types, safe operators, and common pitfalls.</p>
+<hr />
+<h2 id="background-what-are-loan-custom-field-calculations">Background: What Are Loan Custom Field Calculations?</h2>
+<p>Encompass lets you define custom fields (e.g., <code>CUST01FV</code> or <code>CX.MYFIELD</code>) that
+<strong>automatically compute their value</strong> from an expression you write. Unlike Advanced
+Coding (VB.NET), custom field calculations use a <strong>dedicated expression engine</strong> with
+a simpler syntax — no If/End If blocks, just inline expressions.</p>
 <blockquote>
-<p>**Note:** These calculations can also be referenced inside Advanced Coding business</p>
-<p>rules by reading the custom field's value.</p>
+<p><strong>Note:</strong> These calculations can also be referenced inside Advanced Coding business
+rules by reading the custom field's value.</p>
 </blockquote>
-<p>### How to Set Up a Custom Field Calculation</p>
-<p>1. **Encompass → Settings → Loan Setup → Loan Custom Fields**</p>
-<p>2. Double-click a pre-defined field (e.g., <code>CUST01FV</code>) or click **New** and enter a Field ID</p>
-<p>3. Enter a Description and select a **Format** (Integer, Decimal, String, Date, Y/N, etc.)</p>
-<p>4. Enter your calculation expression</p>
-<p>5. Click **Validate** to check syntax, then **OK**</p>
-<p>---</p>
-<p>## Referencing Loan Fields</p>
+<h3 id="how-to-set-up-a-custom-field-calculation">How to Set Up a Custom Field Calculation</h3>
+<ol>
+<li><strong>Encompass → Settings → Loan Setup → Loan Custom Fields</strong></li>
+<li>Double-click a pre-defined field (e.g., <code>CUST01FV</code>) or click <strong>New</strong> and enter a Field ID</li>
+<li>Enter a Description and select a <strong>Format</strong> (Integer, Decimal, String, Date, Y/N, etc.)</li>
+<li>Enter your calculation expression</li>
+<li>Click <strong>Validate</strong> to check syntax, then <strong>OK</strong></li>
+</ol>
+<hr />
+<h2 id="referencing-loan-fields">Referencing Loan Fields</h2>
 <p>Use square brackets with the field ID to read any loan field:</p>
-<pre><code>
-\[1109]      → Loan Amount (numeric)
-
-\[4000]      → Borrower First Name (text)
-
-\[136]       → Purchase Price (numeric)
-
-\[CX.MYFIELD] → Another custom field
-
+<pre><code>[1109]      → Loan Amount (numeric)
+[4000]      → Borrower First Name (text)
+[136]       → Purchase Price (numeric)
+[CX.MYFIELD] → Another custom field
 </code></pre>
-<p>**Field Modifiers** (placed inside brackets before the ID):</p>
-<p>| Modifier | Effect | Example |</p>
-<p>|----------|--------|---------|</p>
-<p>| <code>#</code> | Force numeric — returns 0 if blank or non-numeric | <code>\[#1109]</code> |</p>
-<p>| <code>-</code> | Force unformatted string (e.g., <code>200000.00</code>) | <code>\[-1109]</code> |</p>
-<p>| <code>+</code> | Force formatted string (e.g., <code>200,000.00</code>) | <code>\[+1109]</code> |</p>
-<p>| <code>@</code> | Force date — returns 1/1/1 if not a valid date | <code>\[@1402]</code> |</p>
+<p><strong>Field Modifiers</strong> (placed inside brackets before the ID):</p>
+<table>
+<thead>
+<tr>
+<th>Modifier</th>
+<th>Effect</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>#</code></td>
+<td>Force numeric — returns 0 if blank or non-numeric</td>
+<td><code>[#1109]</code></td>
+</tr>
+<tr>
+<td><code>-</code></td>
+<td>Force unformatted string (e.g., <code>200000.00</code>)</td>
+<td><code>[-1109]</code></td>
+</tr>
+<tr>
+<td><code>+</code></td>
+<td>Force formatted string (e.g., <code>200,000.00</code>)</td>
+<td><code>[+1109]</code></td>
+</tr>
+<tr>
+<td><code>@</code></td>
+<td>Force date — returns 1/1/1 if not a valid date</td>
+<td><code>[@1402]</code></td>
+</tr>
+</tbody>
+</table>
 <blockquote>
-<p>**Important:** An unpopulated numeric field returns an **empty string**, not zero.</p>
-<p>Always use <code>\[#FieldID]</code> or safe functions when doing math to avoid errors.</p>
+<p><strong>Important:</strong> An unpopulated numeric field returns an <strong>empty string</strong>, not zero.
+Always use <code>[#FieldID]</code> or safe functions when doing math to avoid errors.</p>
 </blockquote>
-<p>---</p>
-<p>## Arithmetic Operations</p>
+<hr />
+<h2 id="arithmetic-operations">Arithmetic Operations</h2>
 <p>Standard operators with normal order-of-operations. Parentheses supported.</p>
-<pre><code>
-0.02 \* \[1109]
-
-0.02 \* (\[1109] + \[44])
-
-(\[#1109] - \[#136]) / \[#136] \* 100
-
+<pre><code>0.02 * [1109]
+0.02 * ([1109] + [44])
+([#1109] - [#136]) / [#136] * 100
 </code></pre>
-<p>### Safe Arithmetic (use when fields may be empty)</p>
-<p>| Function | Description |</p>
-<p>|----------|-------------|</p>
-<p>| <code>Sum(x, y, ...)</code> | Adds values; blank if any operand is non-numeric |</p>
-<p>| <code>SumAny(x, y, ...)</code> | Adds values, **skipping** non-numeric ones; blank only if all are non-numeric |</p>
-<p>| <code>Diff(x, y)</code> | <code>x - y</code>; blank if either is non-numeric |</p>
-<p>| <code>Mult(x, y, ...)</code> | Multiplies; blank if any operand is non-numeric |</p>
-<p>| <code>MultAny(x, y, ...)</code> | Multiplies, skipping non-numeric ones |</p>
-<p>| <code>Div(x, y)</code> | <code>x / y</code>; blank if either is non-numeric |</p>
-<p>**Example — safe vs. unsafe:**</p>
-<pre><code>
-Unsafe:  0.02 \* (\[1109] + \[44])
-
-Safe:    Mult(0.02, Sum(\[1109], \[44]))
-
+<h3 id="safe-arithmetic-use-when-fields-may-be-empty">Safe Arithmetic (use when fields may be empty)</h3>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Sum(x, y, ...)</code></td>
+<td>Adds values; blank if any operand is non-numeric</td>
+</tr>
+<tr>
+<td><code>SumAny(x, y, ...)</code></td>
+<td>Adds values, <strong>skipping</strong> non-numeric ones; blank only if all are non-numeric</td>
+</tr>
+<tr>
+<td><code>Diff(x, y)</code></td>
+<td><code>x - y</code>; blank if either is non-numeric</td>
+</tr>
+<tr>
+<td><code>Mult(x, y, ...)</code></td>
+<td>Multiplies; blank if any operand is non-numeric</td>
+</tr>
+<tr>
+<td><code>MultAny(x, y, ...)</code></td>
+<td>Multiplies, skipping non-numeric ones</td>
+</tr>
+<tr>
+<td><code>Div(x, y)</code></td>
+<td><code>x / y</code>; blank if either is non-numeric</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example — safe vs. unsafe:</strong></p>
+<pre><code>Unsafe:  0.02 * ([1109] + [44])
+Safe:    Mult(0.02, Sum([1109], [44]))
 </code></pre>
-<p>---</p>
-<p>## Math Functions</p>
-<p>| Function | Description | Example |</p>
-<p>|----------|-------------|---------|</p>
-<p>| <code>Abs(x)</code> | Absolute value | <code>Abs(\[101] - \[102])</code> |</p>
-<p>| <code>Min(x, y, ...)</code> | Smallest value | <code>Min(\[102], \[103], \[104])</code> |</p>
-<p>| <code>Max(x, y, ...)</code> | Largest value | <code>Max(\[102], \[103], \[104])</code> |</p>
-<p>| <code>LMedian(x, y, ...)</code> | Median (lower of middle two if even count) | <code>LMedian(\[#67], \[#1450], \[#1414])</code> |</p>
-<p>| <code>UMedian(x, y, ...)</code> | Median (upper of middle two if even count) | <code>UMedian(\[#67], \[#1450], \[#1414])</code> |</p>
-<p>| <code>Sqrt(x)</code> | Square root | <code>Sqrt(0.02 \* \[1109])</code> |</p>
-<p>| <code>Round(x, precision)</code> | Round to decimal places | <code>Round(\[1109], 2)</code> |</p>
-<p>| <code>Trunc(x, precision)</code> | Truncate to decimal places | <code>Trunc(\[1109], 2)</code> |</p>
-<p>| <code>Log(x)</code> | Natural log | <code>Log(1000 + \[910])</code> |</p>
-<p>| <code>Log10(x)</code> | Base-10 log | <code>Log10(1000 + \[910])</code> |</p>
-<p>| <code>Exp(x)</code> | e^x | <code>Exp(\[1171] / 100)</code> |</p>
-<p>| <code>Pow(x, y)</code> | x^y | <code>Pow(\[1171], 5)</code> |</p>
-<p>| <code>Sgn(x)</code> | Sign: 1 / 0 / -1 | <code>Sgn(\[1093])</code> |</p>
-<p>| <code>XInt(x, default)</code> | Convert to integer (default 0 on failure) | <code>XInt(\[1109], 1)</code> |</p>
-<p>| <code>XDec(x, default)</code> | Convert to decimal (default 0 on failure) | <code>XDec(\[1109], -1)</code> |</p>
-<p>---</p>
-<p>## Text (String) Operations</p>
-<p>Use <code>\&amp;</code> for concatenation. Enclose literals in double quotes. To include a literal</p>
-<p>double-quote, use two of them (<code>""</code>).</p>
-<pre><code>
-\[4000] \&amp; &quot; &quot; \&amp; \[4002]             → &quot;Joe Smith&quot;
-
-&quot;$&quot; \&amp; \[+1109] \&amp; &quot; USD&quot;            → &quot;$200,000.00 USD&quot;
-
-\[4000] \&amp; &quot; is the &quot;&quot;primary&quot;&quot; borrower.&quot;   → Joe is the &quot;primary&quot; borrower.
-
+<hr />
+<h2 id="math-functions">Math Functions</h2>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Abs(x)</code></td>
+<td>Absolute value</td>
+<td><code>Abs([101] - [102])</code></td>
+</tr>
+<tr>
+<td><code>Min(x, y, ...)</code></td>
+<td>Smallest value</td>
+<td><code>Min([102], [103], [104])</code></td>
+</tr>
+<tr>
+<td><code>Max(x, y, ...)</code></td>
+<td>Largest value</td>
+<td><code>Max([102], [103], [104])</code></td>
+</tr>
+<tr>
+<td><code>LMedian(x, y, ...)</code></td>
+<td>Median (lower of middle two if even count)</td>
+<td><code>LMedian([#67], [#1450], [#1414])</code></td>
+</tr>
+<tr>
+<td><code>UMedian(x, y, ...)</code></td>
+<td>Median (upper of middle two if even count)</td>
+<td><code>UMedian([#67], [#1450], [#1414])</code></td>
+</tr>
+<tr>
+<td><code>Sqrt(x)</code></td>
+<td>Square root</td>
+<td><code>Sqrt(0.02 * [1109])</code></td>
+</tr>
+<tr>
+<td><code>Round(x, precision)</code></td>
+<td>Round to decimal places</td>
+<td><code>Round([1109], 2)</code></td>
+</tr>
+<tr>
+<td><code>Trunc(x, precision)</code></td>
+<td>Truncate to decimal places</td>
+<td><code>Trunc([1109], 2)</code></td>
+</tr>
+<tr>
+<td><code>Log(x)</code></td>
+<td>Natural log</td>
+<td><code>Log(1000 + [910])</code></td>
+</tr>
+<tr>
+<td><code>Log10(x)</code></td>
+<td>Base-10 log</td>
+<td><code>Log10(1000 + [910])</code></td>
+</tr>
+<tr>
+<td><code>Exp(x)</code></td>
+<td>e^x</td>
+<td><code>Exp([1171] / 100)</code></td>
+</tr>
+<tr>
+<td><code>Pow(x, y)</code></td>
+<td>x^y</td>
+<td><code>Pow([1171], 5)</code></td>
+</tr>
+<tr>
+<td><code>Sgn(x)</code></td>
+<td>Sign: 1 / 0 / -1</td>
+<td><code>Sgn([1093])</code></td>
+</tr>
+<tr>
+<td><code>XInt(x, default)</code></td>
+<td>Convert to integer (default 0 on failure)</td>
+<td><code>XInt([1109], 1)</code></td>
+</tr>
+<tr>
+<td><code>XDec(x, default)</code></td>
+<td>Convert to decimal (default 0 on failure)</td>
+<td><code>XDec([1109], -1)</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="text-string-operations">Text (String) Operations</h2>
+<p>Use <code>&amp;</code> for concatenation. Enclose literals in double quotes. To include a literal
+double-quote, use two of them (<code>""</code>).</p>
+<pre><code>[4000] &amp; &quot; &quot; &amp; [4002]             → &quot;Joe Smith&quot;
+&quot;$&quot; &amp; [+1109] &amp; &quot; USD&quot;            → &quot;$200,000.00 USD&quot;
+[4000] &amp; &quot; is the &quot;&quot;primary&quot;&quot; borrower.&quot;   → Joe is the &quot;primary&quot; borrower.
 </code></pre>
-<p>| Function | Description | Example |</p>
-<p>|----------|-------------|---------|</p>
-<p>| <code>Trim(x)</code> | Remove leading/trailing whitespace | <code>Trim(\[4000] \&amp; " " \&amp; \[4002])</code> |</p>
-<p>| <code>Left(x, n)</code> | First n characters | <code>Left(\[4002], 5)</code> |</p>
-<p>| <code>Right(x, n)</code> | Last n characters | <code>Right(\[4002], 5)</code> |</p>
-<p>| <code>Mid(x, start, length)</code> | Substring (0-based start) | <code>Mid(\[4002], 3, 2)</code> |</p>
-<p>| <code>InStr(x, y)</code> | Position of y in x (case-sensitive) | <code>InStr(\[4002], "mith")</code> |</p>
-<p>| <code>LCase(x)</code> | Lowercase | <code>LCase(\[4002])</code> |</p>
-<p>| <code>UCase(x)</code> | Uppercase | <code>UCase(\[4002])</code> |</p>
-<p>| <code>Replace(x, y, z)</code> | Replace all y with z in x | <code>Replace(\[1264], "Investor", "Lender")</code> |</p>
-<p>| <code>Int2Text(x)</code> | Integer to words: "Five Hundred Thirty-Four" | <code>Int2Text(\[4])</code> |</p>
-<p>| <code>Dec2Text(x)</code> | Decimal to words: "Sixty-Five and Fifty-Three Hundredths" | <code>Dec2Text(\[3])</code> |</p>
-<p>| <code>Money2Text(x)</code> | Decimal to money words: "Sixty-Five Dollars and Fifty-Three Cents" | <code>Money2Text(\[1109])</code> |</p>
-<p>---</p>
-<p>## Date Operations</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Trim(x)</code></td>
+<td>Remove leading/trailing whitespace</td>
+<td><code>Trim([4000] &amp; " " &amp; [4002])</code></td>
+</tr>
+<tr>
+<td><code>Left(x, n)</code></td>
+<td>First n characters</td>
+<td><code>Left([4002], 5)</code></td>
+</tr>
+<tr>
+<td><code>Right(x, n)</code></td>
+<td>Last n characters</td>
+<td><code>Right([4002], 5)</code></td>
+</tr>
+<tr>
+<td><code>Mid(x, start, length)</code></td>
+<td>Substring (0-based start)</td>
+<td><code>Mid([4002], 3, 2)</code></td>
+</tr>
+<tr>
+<td><code>InStr(x, y)</code></td>
+<td>Position of y in x (case-sensitive)</td>
+<td><code>InStr([4002], "mith")</code></td>
+</tr>
+<tr>
+<td><code>LCase(x)</code></td>
+<td>Lowercase</td>
+<td><code>LCase([4002])</code></td>
+</tr>
+<tr>
+<td><code>UCase(x)</code></td>
+<td>Uppercase</td>
+<td><code>UCase([4002])</code></td>
+</tr>
+<tr>
+<td><code>Replace(x, y, z)</code></td>
+<td>Replace all y with z in x</td>
+<td><code>Replace([1264], "Investor", "Lender")</code></td>
+</tr>
+<tr>
+<td><code>Int2Text(x)</code></td>
+<td>Integer to words: "Five Hundred Thirty-Four"</td>
+<td><code>Int2Text([4])</code></td>
+</tr>
+<tr>
+<td><code>Dec2Text(x)</code></td>
+<td>Decimal to words: "Sixty-Five and Fifty-Three Hundredths"</td>
+<td><code>Dec2Text([3])</code></td>
+</tr>
+<tr>
+<td><code>Money2Text(x)</code></td>
+<td>Decimal to money words: "Sixty-Five Dollars and Fifty-Three Cents"</td>
+<td><code>Money2Text([1109])</code></td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="date-operations">Date Operations</h2>
 <p>Field format must be DATE type (MONTHDAY fields are not compatible).</p>
-<p>| Function | Description | Example |</p>
-<p>|----------|-------------|---------|</p>
-<p>| <code>Day(x)</code> | Day portion of date | <code>Day(\[1402])</code> |</p>
-<p>| <code>Month(x)</code> | Month portion | <code>Month(\[1402])</code> |</p>
-<p>| <code>Year(x)</code> | Year portion | <code>Year(\[1402])</code> |</p>
-<p>| <code>DateAdd(period, count, x)</code> | Add days/months/years; blank on error | <code>DateAdd("yyyy", 1, \[1402])</code> |</p>
-<p>| <code>XDateAdd(period, count, x)</code> | Add days/months/years; returns empty (not blank calc) on error | <code>XDateAdd("m", 3, \[1402])</code> |</p>
-<p>| <code>DateDiff(period, x, y)</code> | Difference between dates; blank on error | <code>DateDiff("d", \[1402], \[1403])</code> |</p>
-<p>| <code>XDateDiff(period, x, y)</code> | Difference; returns empty on error | <code>XDateDiff("d", \[1402], \[1403])</code> |</p>
-<p>| <code>XDate(x, default)</code> | Convert to date (default 1/1/1 on failure) | <code>XDate(\[1402], "11/30/2010")</code> |</p>
-<p>| <code>XMonthDay(x, default)</code> | Convert to month-day (stored as 2010 date) | <code>XMonthDay("3/15")</code> |</p>
-<p>| <code>Today</code> | Today's date | <code>DateAdd("d", 7, Today)</code> |</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+<th>Example</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Day(x)</code></td>
+<td>Day portion of date</td>
+<td><code>Day([1402])</code></td>
+</tr>
+<tr>
+<td><code>Month(x)</code></td>
+<td>Month portion</td>
+<td><code>Month([1402])</code></td>
+</tr>
+<tr>
+<td><code>Year(x)</code></td>
+<td>Year portion</td>
+<td><code>Year([1402])</code></td>
+</tr>
+<tr>
+<td><code>DateAdd(period, count, x)</code></td>
+<td>Add days/months/years; blank on error</td>
+<td><code>DateAdd("yyyy", 1, [1402])</code></td>
+</tr>
+<tr>
+<td><code>XDateAdd(period, count, x)</code></td>
+<td>Add days/months/years; returns empty (not blank calc) on error</td>
+<td><code>XDateAdd("m", 3, [1402])</code></td>
+</tr>
+<tr>
+<td><code>DateDiff(period, x, y)</code></td>
+<td>Difference between dates; blank on error</td>
+<td><code>DateDiff("d", [1402], [1403])</code></td>
+</tr>
+<tr>
+<td><code>XDateDiff(period, x, y)</code></td>
+<td>Difference; returns empty on error</td>
+<td><code>XDateDiff("d", [1402], [1403])</code></td>
+</tr>
+<tr>
+<td><code>XDate(x, default)</code></td>
+<td>Convert to date (default 1/1/1 on failure)</td>
+<td><code>XDate([1402], "11/30/2010")</code></td>
+</tr>
+<tr>
+<td><code>XMonthDay(x, default)</code></td>
+<td>Convert to month-day (stored as 2010 date)</td>
+<td><code>XMonthDay("3/15")</code></td>
+</tr>
+<tr>
+<td><code>Today</code></td>
+<td>Today's date</td>
+<td><code>DateAdd("d", 7, Today)</code></td>
+</tr>
+</tbody>
+</table>
 <p>Period codes: <code>"d"</code> = days, <code>"m"</code> = months, <code>"yyyy"</code> = years</p>
-<p>---</p>
-<p>## Calendar-Based Operations</p>
+<hr />
+<h2 id="calendar-based-operations">Calendar-Based Operations</h2>
 <p>Uses your company's compliance calendars (Business, Postal, Reg-Z):</p>
-<p>| Function | Description |</p>
-<p>|----------|-------------|</p>
-<p>| <code>Calendar.AddBusinessDays(date, count, moveToNext)</code> | Add business days (per Business Calendar) |</p>
-<p>| <code>Calendar.AddPostalDays(date, count, moveToNext)</code> | Add postal days (US Postal Calendar) |</p>
-<p>| <code>Calendar.AddRegZBusinessDays(date, count, moveToNext)</code> | Add Reg-Z business days |</p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Calendar.AddBusinessDays(date, count, moveToNext)</code></td>
+<td>Add business days (per Business Calendar)</td>
+</tr>
+<tr>
+<td><code>Calendar.AddPostalDays(date, count, moveToNext)</code></td>
+<td>Add postal days (US Postal Calendar)</td>
+</tr>
+<tr>
+<td><code>Calendar.AddRegZBusinessDays(date, count, moveToNext)</code></td>
+<td>Add Reg-Z business days</td>
+</tr>
+</tbody>
+</table>
 <p><code>moveToNext</code> = <code>true</code> advances to next business day if start date is a non-business day.</p>
-<pre><code>
-Calendar.AddBusinessDays(\[763], 5, true)
-
+<pre><code>Calendar.AddBusinessDays([763], 5, true)
 </code></pre>
-<p>---</p>
-<p>## Branching and Logic (IIF)</p>
-<pre><code>
-IIF(condition, value\_if\_true, value\_if\_false)
-
+<hr />
+<h2 id="branching-and-logic-iif">Branching and Logic (IIF)</h2>
+<pre><code>IIF(condition, value_if_true, value_if_false)
 </code></pre>
-<p>**Simple example:**</p>
-<pre><code>
-IIF(\[1109] &gt; 100000, 0.02 \* \[1109], 0.05 \* \[1109])
-
+<p><strong>Simple example:</strong></p>
+<pre><code>IIF([1109] &gt; 100000, 0.02 * [1109], 0.05 * [1109])
 </code></pre>
-<p>**With AND/OR:**</p>
-<pre><code>
-IIF(\[1109] &gt; 100000 AND \[1335] &lt; 20000, 0.02 \* \[1109], 0.05 \* \[1109])
-
+<p><strong>With AND/OR:</strong></p>
+<pre><code>IIF([1109] &gt; 100000 AND [1335] &lt; 20000, 0.02 * [1109], 0.05 * [1109])
 </code></pre>
-<p>**Nested IIF (multiple branches):**</p>
-<pre><code>
-IIF(\[1811] = &quot;PrimaryResidence&quot;, 0.05 \* \[#1109],
-
-IIF(\[1811] = &quot;SecondHome&quot;,       0.02 \* \[#1109],
-
-IIF(\[1811] = &quot;Investor&quot;,         0.01 \* \[#1109], 0)))
-
+<p><strong>Nested IIF (multiple branches):</strong></p>
+<pre><code>IIF([1811] = &quot;PrimaryResidence&quot;, 0.05 * [#1109],
+IIF([1811] = &quot;SecondHome&quot;,       0.02 * [#1109],
+IIF([1811] = &quot;Investor&quot;,         0.01 * [#1109], 0)))
 </code></pre>
 <blockquote>
-<p>⚠️ **IIF evaluates BOTH branches before testing the condition.** If either branch</p>
-<p>throws an error, the whole calculation fails — even if that branch would never be used.</p>
-<p>Use <code>\[#FieldID]</code> modifiers or safe functions to prevent this.</p>
+<p>⚠️ <strong>IIF evaluates BOTH branches before testing the condition.</strong> If either branch
+throws an error, the whole calculation fails — even if that branch would never be used.
+Use <code>[#FieldID]</code> modifiers or safe functions to prevent this.</p>
 </blockquote>
-<p>**Conditional helper functions:**</p>
-<p>| Function | Description |</p>
-<p>|----------|-------------|</p>
-<p>| <code>IsEmpty(x)</code> | True if x is the empty string |</p>
-<p>| <code>IfEmpty(x, val)</code> | Returns x if non-empty, otherwise val |</p>
-<p>| <code>IsNumeric(x)</code> | True if x can be converted to a number |</p>
-<p>| <code>IsDate(x)</code> | True if x can be converted to a date |</p>
-<p>---</p>
-<p>## List and Range Operations</p>
+<p><strong>Conditional helper functions:</strong></p>
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>IsEmpty(x)</code></td>
+<td>True if x is the empty string</td>
+</tr>
+<tr>
+<td><code>IfEmpty(x, val)</code></td>
+<td>Returns x if non-empty, otherwise val</td>
+</tr>
+<tr>
+<td><code>IsNumeric(x)</code></td>
+<td>True if x can be converted to a number</td>
+</tr>
+<tr>
+<td><code>IsDate(x)</code></td>
+<td>True if x can be converted to a date</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="list-and-range-operations">List and Range Operations</h2>
 <p>Cleaner alternatives to deeply nested IIF statements:</p>
-<p>| Function | Description |</p>
-<p>|----------|-------------|</p>
-<p>| <code>Match(x, v0, v1, ...)</code> | Index of first match; -1 if none |</p>
-<p>| <code>Range(x, v0, v1, ...)</code> | Index of first value **greater than** x |</p>
-<p>| <code>RangeLow(x, v0, v1, ...)</code> | Index of first value **≥** x |</p>
-<p>| <code>Pick(x, v0, v1, ...)</code> | Returns value at index x |</p>
-<p>| <code>Count(v0, v1, ...)</code> | Count of non-empty values |</p>
-<p>**Example — replace nested IIF with Match + Pick:**</p>
-<pre><code>
-' Nested IIF version:
-
-IIF(\[1811] = &quot;PrimaryResidence&quot;, 0.05 \* \[#1109],
-
-IIF(\[1811] = &quot;SecondHome&quot;,       0.02 \* \[#1109],
-
-IIF(\[1811] = &quot;Investor&quot;,         0.01 \* \[#1109], 0)))
-
-
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>Match(x, v0, v1, ...)</code></td>
+<td>Index of first match; -1 if none</td>
+</tr>
+<tr>
+<td><code>Range(x, v0, v1, ...)</code></td>
+<td>Index of first value <strong>greater than</strong> x</td>
+</tr>
+<tr>
+<td><code>RangeLow(x, v0, v1, ...)</code></td>
+<td>Index of first value <strong>≥</strong> x</td>
+</tr>
+<tr>
+<td><code>Pick(x, v0, v1, ...)</code></td>
+<td>Returns value at index x</td>
+</tr>
+<tr>
+<td><code>Count(v0, v1, ...)</code></td>
+<td>Count of non-empty values</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example — replace nested IIF with Match + Pick:</strong></p>
+<pre><code>' Nested IIF version:
+IIF([1811] = &quot;PrimaryResidence&quot;, 0.05 * [#1109],
+IIF([1811] = &quot;SecondHome&quot;,       0.02 * [#1109],
+IIF([1811] = &quot;Investor&quot;,         0.01 * [#1109], 0)))
 
 ' Match + Pick version:
-
-Pick(Match(\[1811], &quot;PrimaryResidence&quot;, &quot;SecondHome&quot;, &quot;Investor&quot;, &quot;&quot;),
-
-&amp;#x20;    0.05 \* \[#1109], 0.02 \* \[#1109], 0.01 \* \[#1109], 0)
-
+Pick(Match([1811], &quot;PrimaryResidence&quot;, &quot;SecondHome&quot;, &quot;Investor&quot;, &quot;&quot;),
+     0.05 * [#1109], 0.02 * [#1109], 0.01 * [#1109], 0)
 </code></pre>
-<p>**Range example — fee tier by loan amount:**</p>
-<pre><code>
-Pick(Range(\[1109], 100000, 200000, 500000), 500, 750, 1000, 1500)
-
+<p><strong>Range example — fee tier by loan amount:</strong></p>
+<pre><code>Pick(Range([1109], 100000, 200000, 500000), 500, 750, 1000, 1500)
 </code></pre>
 <p>Returns 500 for ≤$100k, 750 for $100k–$200k, 1000 for $200k–$500k, 1500 for &gt;$500k.</p>
-<p>---</p>
-<p>## Calculation Errors and How to Avoid Them</p>
-<p>**Two error types:**</p>
-<p>- **Syntax errors** — caught when you click Validate</p>
-<p>- **Runtime errors** — occur during loan use; Encompass clears the field when this happens</p>
-<p>**Common causes:**</p>
-<p>- A referenced field is blank (unpopulated numeric fields return <code>""</code>, not 0)</p>
-<p>- Division by zero</p>
-<p>- Date function receiving a non-date value</p>
-<p>- IIF branch that fails even when not selected</p>
-<p>**Fixes:**</p>
-<p>1. Use <code>\[#FieldID]</code> to convert blanks to 0</p>
-<p>2. Use safe functions: <code>SumAny</code>, <code>Diff</code>, <code>Mult</code>, <code>Div</code>, etc.</p>
-<p>3. Use <code>IfEmpty(\[1109], 0)</code> to supply a fallback</p>
-<p>4. Split complex logic across two custom fields if one branch is inherently unsafe</p>
-<p>**Circular dependencies** — Encompass will warn you if your custom fields reference</p>
-<p>each other in a loop. Avoid these patterns:</p>
-<pre><code>
-CX.A = \[1109] + \[CX.B]
-
-CX.B = \[CX.C] \* 2
-
-CX.C = \[CX.A] + 20000    ← circular!
-
+<hr />
+<h2 id="calculation-errors-and-how-to-avoid-them">Calculation Errors and How to Avoid Them</h2>
+<p><strong>Two error types:</strong>
+- <strong>Syntax errors</strong> — caught when you click Validate
+- <strong>Runtime errors</strong> — occur during loan use; Encompass clears the field when this happens</p>
+<p><strong>Common causes:</strong>
+- A referenced field is blank (unpopulated numeric fields return <code>""</code>, not 0)
+- Division by zero
+- Date function receiving a non-date value
+- IIF branch that fails even when not selected</p>
+<p><strong>Fixes:</strong>
+1. Use <code>[#FieldID]</code> to convert blanks to 0
+2. Use safe functions: <code>SumAny</code>, <code>Diff</code>, <code>Mult</code>, <code>Div</code>, etc.
+3. Use <code>IfEmpty([1109], 0)</code> to supply a fallback
+4. Split complex logic across two custom fields if one branch is inherently unsafe</p>
+<p><strong>Circular dependencies</strong> — Encompass will warn you if your custom fields reference
+each other in a loop. Avoid these patterns:</p>
+<pre><code>CX.A = [1109] + [CX.B]
+CX.B = [CX.C] * 2
+CX.C = [CX.A] + 20000    ← circular!
 </code></pre>
-<p>---</p>
-<p>## Advanced: VB.NET Functions</p>
-<p>The calculation engine is built on VB.NET, so any <code>Microsoft.VisualBasic</code> function</p>
-<p>is available. Do **not** use anything that shows UI (e.g., <code>MsgBox</code>) — this will</p>
-<p>crash Encompass Server.</p>
-<p>---</p>
-<p>## Common Field IDs</p>
-<p>| Field ID | Description |</p>
-<p>|----------|-------------|</p>
-<p>| 3 | Interest Rate |</p>
-<p>| 14 | Subject Property State |</p>
-<p>| 19 | Loan Purpose |</p>
-<p>| 44 | Secondary Financing Amount |</p>
-<p>| 136 | Purchase Price |</p>
-<p>| 1109 | Loan Amount |</p>
-<p>| 1335 | Borrower Income |</p>
-<p>| 1402 | Application Date |</p>
-<p>| 1403 | Closing Date |</p>
-<p>| 1811 | Occupancy Type |</p>
-<p>| 4000 | Borrower First Name |</p>
-<p>| 4002 | Borrower Last Name |</p>
-<p>| CX.* | Custom Field prefix |</p>
-<p>| MS.APP | Approval Milestone Date |</p>
-<p>| MS.DOC | Documents Milestone Date |</p>
+<hr />
+<h2 id="advanced-vbnet-functions">Advanced: VB.NET Functions</h2>
+<p>The calculation engine is built on VB.NET, so any <code>Microsoft.VisualBasic</code> function
+is available. Do <strong>not</strong> use anything that shows UI (e.g., <code>MsgBox</code>) — this will
+crash Encompass Server.</p>
+<hr />
+<h2 id="common-field-ids">Common Field IDs</h2>
+<table>
+<thead>
+<tr>
+<th>Field ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>3</td>
+<td>Interest Rate</td>
+</tr>
+<tr>
+<td>14</td>
+<td>Subject Property State</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Loan Purpose</td>
+</tr>
+<tr>
+<td>44</td>
+<td>Secondary Financing Amount</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Purchase Price</td>
+</tr>
+<tr>
+<td>1109</td>
+<td>Loan Amount</td>
+</tr>
+<tr>
+<td>1335</td>
+<td>Borrower Income</td>
+</tr>
+<tr>
+<td>1402</td>
+<td>Application Date</td>
+</tr>
+<tr>
+<td>1403</td>
+<td>Closing Date</td>
+</tr>
+<tr>
+<td>1811</td>
+<td>Occupancy Type</td>
+</tr>
+<tr>
+<td>4000</td>
+<td>Borrower First Name</td>
+</tr>
+<tr>
+<td>4002</td>
+<td>Borrower Last Name</td>
+</tr>
+<tr>
+<td>CX.*</td>
+<td>Custom Field prefix</td>
+</tr>
+<tr>
+<td>MS.APP</td>
+<td>Approval Milestone Date</td>
+</tr>
+<tr>
+<td>MS.DOC</td>
+<td>Documents Milestone Date</td>
+</tr>
+</tbody>
+</table>
 
 
 
 
 
 
+
+  
+  
 
 
 
