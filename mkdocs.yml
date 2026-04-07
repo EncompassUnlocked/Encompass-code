@@ -24,3 +24,5 @@ nav:
           - Button field logging and audit trail: web-code/field-logging/button-field-logging-audit-trail.md
   - Skills:
       - Using Skills with Claude: skills/index.md
+      - Available Skills:
+          - Encompass Scripting Framework: skills/encompass-scripting-framework/SKILL.md

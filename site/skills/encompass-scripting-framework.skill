@@ -1,0 +1,394 @@
+---
+name: encompass-scripting-framework
+description: >
+  Use this skill whenever the user wants to write, explain, debug, or work with
+  ICE Mortgage Technology (Encompass) Secure Scripting Framework code — including
+  Custom Forms, Custom Tools, and Plugins. Trigger this skill any time the user
+  mentions Encompass scripting, elli.script, scripting objects (Application, Auth,
+  Http, Loan, Session, Script), JavaScript in Encompass, Custom Tool scripting,
+  Plugin scripting, or asks how to interact with loan data, UI, authentication, or
+  HTTP calls from within an Encompass guest context. Also trigger when the user
+  asks about the ICE Mortgage Technology Lender API scripting context, even if
+  they don't use the phrase "Secure Scripting Framework."
+---
+
+# ICE Mortgage Technology — Secure Scripting Framework
+
+This skill covers writing and troubleshooting JavaScript-based scripting code
+inside the **ICE Secure Scripting Framework** for Encompass. It targets
+Custom Forms, Custom Tools, and Plugins running as guests in the Encompass
+application.
+
+---
+
+## What Is the Secure Scripting Framework?
+
+The Secure Scripting Framework lets developers embed JavaScript inside Encompass
+guests (Custom Forms, Custom Tools, Plugins). Scripts run in a sandboxed browser
+context and interact with the host application through a set of **Scripting Objects**
+exposed via the `elli.script` API.
+
+**Supported integration types (where scripting works):**
+- Custom Form
+- Custom Tool
+- Plugin
+
+**Key constraint:** Scripts cannot access the DOM directly or make unrestricted
+network calls — all host interaction goes through the scripting objects.
+
+---
+
+## Accessing Scripting Objects
+
+All objects are accessed via `elli.script.getObject()` using the object's
+lowercase string ID. This is **case-sensitive**.
+
+```javascript
+const loan   = await elli.script.getObject("loan");
+const app    = await elli.script.getObject("application");
+const auth   = await elli.script.getObject("auth");
+const http   = await elli.script.getObject("http");
+const session= await elli.script.getObject("session");
+const script = await elli.script.getObject("script");
+```
+
+> All getObject calls are async — always `await` them.
+
+---
+
+## Available Scripting Objects
+
+| Object ID      | Description |
+|----------------|-------------|
+| `application`  | UI-level events and context for the host application |
+| `auth`         | Retrieve authentication tokens for API calls |
+| `http`         | Make HTTP requests to approved endpoints |
+| `loan`         | Read/write loan field data |
+| `session`      | Access current user session info |
+| `script`       | Control the script lifecycle (close, resize, etc.) |
+
+Each object is a **singleton** — call `getObject` once, cache the result.
+
+---
+
+## Application Object
+
+**Object ID:** `application`  
+**Available in:** Custom Form, Custom Tool, Plugin
+
+### Events
+
+| Event | Description | Feedback |
+|-------|-------------|----------|
+| `login` | Fires after user is fully logged in and UI is rendered. NOTE: Does not fire for super administrator users — test with a non-admin account. | none |
+
+### Methods
+
+#### `getApplicationContext()`
+Returns a JSON object with environment and route information.
+
+```javascript
+const app = await elli.script.getObject("application");
+const context = await app.getApplicationContext();
+// context.env.apiHost => "https://api.elliemae.com"
+// context.route.url, context.route.type, context.route.name, context.route.id
+```
+
+**Sample return value:**
+```json
+{
+  "env": {
+    "apiHost": "https://api.elliemae.com"
+  },
+  "route": {
+    "url": "https://encompass.ice.com/pipeline/12345b77-11ac-11c2-ae12-00fdadf8b0fd/custom-tools-tool",
+    "type": "CUSTOM_TOOL",
+    "name": "My Pipeline",
+    "id": "GUID"
+  }
+}
+```
+
+**Possible `route.type` values:**
+
+| type | Description |
+|------|-------------|
+| `GLOBAL_CUSTOM_TOOL` | Global custom tool pipeline view |
+| `CUSTOM_TOOL` | Loan-level custom tool |
+| `CUSTOM_FORM` | Custom form inside a loan (IFB) |
+| `STANDARD_FORM` | Standard form inside a loan |
+| `OTHER` | Any other context (name and id may be null) |
+
+---
+
+## Auth Object
+
+**Object ID:** `auth`  
+**Available in:** Custom Form, Custom Tool, Plugin
+
+Used to retrieve a bearer token for making authenticated API calls.
+
+### Methods
+
+#### `getAccessToken()`
+Returns the current user's OAuth access token as a string.
+
+```javascript
+const auth  = await elli.script.getObject("auth");
+const token = await auth.getAccessToken();
+
+// Use token in API calls:
+fetch("https://api.elliemae.com/...", {
+  headers: { "Authorization": `Bearer ${token}` }
+});
+```
+
+---
+
+## Http Object
+
+**Object ID:** `http`  
+**Available in:** Custom Form, Custom Tool, Plugin
+
+Makes HTTP requests from within the scripting sandbox to pre-approved endpoints.
+
+### Methods
+
+#### `request(config)`
+Sends an HTTP request. Config shape mirrors standard fetch options.
+
+```javascript
+const http = await elli.script.getObject("http");
+const response = await http.request({
+  method: "GET",
+  url: "https://api.elliemae.com/encompass/v3/loans/...",
+  headers: { "Authorization": `Bearer ${token}` }
+});
+const data = JSON.parse(response.body);
+```
+
+---
+
+## Loan Object
+
+**Object ID:** `loan`  
+**Available in:** Custom Form, Custom Tool, Plugin
+
+Read and write loan field data for the currently open loan.
+
+### Methods
+
+#### `getField(fieldId)`
+Returns the current value of a loan field as a string.
+
+```javascript
+const loan  = await elli.script.getObject("loan");
+const state = await loan.getField("14");   // Subject Property State
+const amt   = await loan.getField("1109"); // Loan Amount
+```
+
+#### `setField(fieldId, value)`
+Sets the value of a loan field.
+
+```javascript
+await loan.setField("CX.MYFLAG", "Y");
+await loan.setField("1109", "450000");
+```
+
+#### `getFields(fieldIds[])`
+Batch-read multiple fields at once. Returns an object keyed by field ID.
+
+```javascript
+const fields = await loan.getFields(["14", "19", "1109"]);
+// fields["14"] => "CA"
+// fields["19"] => "Purchase"
+```
+
+#### `save()`
+Persists any field changes back to the loan.
+
+```javascript
+await loan.save();
+```
+
+---
+
+## Session Object
+
+**Object ID:** `session`  
+**Available in:** Custom Form, Custom Tool, Plugin
+
+Access information about the current Encompass session and logged-in user.
+
+### Methods
+
+#### `getUser()`
+Returns a JSON object with the current user's information.
+
+```javascript
+const session = await elli.script.getObject("session");
+const user    = await session.getUser();
+// user.id, user.name, user.email, user.role
+```
+
+---
+
+## Script Object
+
+**Object ID:** `script`  
+**Available in:** Custom Form, Custom Tool, Plugin
+
+Controls the guest window itself.
+
+### Methods
+
+#### `close()`
+Closes the custom tool or form window.
+
+```javascript
+const script = await elli.script.getObject("script");
+await script.close();
+```
+
+---
+
+## Async/Await Programming Model
+
+All scripting object methods are **Promise-based**. Always use `async/await` or
+`.then()` chains to avoid race conditions.
+
+**Recommended pattern — top-level async IIFE:**
+```javascript
+(async () => {
+  const loan = await elli.script.getObject("loan");
+  const loanAmt = await loan.getField("1109");
+  console.log("Loan amount:", loanAmt);
+})();
+```
+
+**Event listener pattern:**
+```javascript
+(async () => {
+  const app = await elli.script.getObject("application");
+  app.addEventListener("login", async () => {
+    const session = await elli.script.getObject("session");
+    const user = await session.getUser();
+    console.log("Logged in as:", user.name);
+  });
+})();
+```
+
+---
+
+## Browser Compatibility
+
+The scripting framework runs inside an **embedded Chromium browser** within the
+Encompass desktop client. Target modern ES6+ syntax and APIs. Avoid polyfills for
+legacy IE/Edge — they are not needed.
+
+---
+
+## Code Samples
+
+### Read loan fields and call the Encompass API
+
+```javascript
+(async () => {
+  const auth  = await elli.script.getObject("auth");
+  const loan  = await elli.script.getObject("loan");
+  const http  = await elli.script.getObject("http");
+
+  const token  = await auth.getAccessToken();
+  const loanId = await loan.getField("364"); // Loan GUID
+
+  const resp = await http.request({
+    method: "GET",
+    url: `https://api.elliemae.com/encompass/v3/loans/${loanId}`,
+    headers: {
+      "Authorization": `Bearer ${token}`,
+      "Content-Type": "application/json"
+    }
+  });
+
+  const loanData = JSON.parse(resp.body);
+  console.log(loanData);
+})();
+```
+
+### Conditionally set a field based on another field
+
+```javascript
+(async () => {
+  const loan  = await elli.script.getObject("loan");
+  const state = await loan.getField("14");
+
+  if (state === "CA") {
+    await loan.setField("CX.REGION", "West");
+  } else if (["NY", "NJ", "CT"].includes(state)) {
+    await loan.setField("CX.REGION", "Northeast");
+  } else {
+    await loan.setField("CX.REGION", "Other");
+  }
+
+  await loan.save();
+})();
+```
+
+### React to login event and display user info
+
+```javascript
+(async () => {
+  const app     = await elli.script.getObject("application");
+  const session = await elli.script.getObject("session");
+
+  app.addEventListener("login", async () => {
+    const user = await session.getUser();
+    document.getElementById("welcome").textContent = `Welcome, ${user.name}`;
+  });
+})();
+```
+
+---
+
+## Common Gotchas
+
+- **Always await getObject()** — forgetting `await` returns a Promise, not the object.
+- **login event skips super admins** — test with a normal (non-super-admin) user account.
+- **Objects are singletons** — calling `getObject("loan")` twice returns the same instance; no need to call it repeatedly.
+- **setField does not auto-save** — you must explicitly call `loan.save()` for changes to persist.
+- **IDs are case-sensitive** — `"Loan"` will fail; must use `"loan"`.
+- **http object is sandboxed** — only pre-approved domains can be reached; arbitrary internet requests may be blocked by Encompass policy.
+
+---
+
+## Quick Reference: Common Loan Field IDs
+
+| Field ID | Description |
+|----------|-------------|
+| 14       | Subject Property State |
+| 19       | Loan Purpose |
+| 136      | Purchase Price |
+| 364      | Loan GUID |
+| 1109     | Loan Amount |
+| 1401     | Loan Program |
+| 3        | Interest Rate |
+| CX.*     | Custom Fields (prefix) |
+
+---
+
+## Relationship to Advanced Coding (VB.NET Rules)
+
+This skill covers **JavaScript-based scripting** in Custom Forms, Custom Tools,
+and Plugins. If you need **VB.NET-based business rules** (Field Triggers, Field
+Data Entry validation, Milestone Completion, Loan Form Printing), see the
+`encompass-advanced-coding` skill instead. The two systems are separate and
+serve different purposes:
+
+| Feature | Secure Scripting (this skill) | Advanced Coding |
+|---------|-------------------------------|-----------------|
+| Language | JavaScript | VB.NET |
+| Context | Custom Form / Tool / Plugin | Business Rules engine |
+| Runs in | Guest browser (Chromium) | Server-side rule engine |
+| Can call APIs | Yes (via http object) | No |
+| Can modify UI | Yes (DOM in guest) | No |
+| Triggered by | Events / page load | Field changes, milestones |
