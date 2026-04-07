@@ -35,4 +35,4 @@ ready-to-use Encompass field trigger code.
 
 Download and install the Field Triggers skill to use it in Claude Code or Claude.ai:
 
-[Coming soon]
+[Download encompass-field-triggers.skill](../skills/encompass-field-triggers.skill)
