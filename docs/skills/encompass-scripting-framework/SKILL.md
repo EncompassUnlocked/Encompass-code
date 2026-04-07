@@ -1,497 +1,264 @@
 ---
-name: encompass-scripting-framework
+name: Field Triggers
 description: >
-  Use this skill whenever the user wants to write, explain, debug, or work with
-  ICE Mortgage Technology (Encompass) Secure Scripting Framework code — including
-  Custom Forms, Custom Tools, and Plugins. Trigger this skill any time the user
-  mentions Encompass scripting, elli.script, scripting objects (Application, Auth,
-  Http, Loan, Session, Script), JavaScript in Encompass, Custom Tool scripting,
-  Plugin scripting, or asks how to interact with loan data, UI, authentication, or
-  HTTP calls from within an Encompass guest context. Also trigger when the user
-  asks about debugging, console.log, logging patterns, or structured output in an
-  Encompass or JavaScript context — even if they don't use the phrase "Secure
-  Scripting Framework."
+  Use this skill whenever the user wants to create, write, explain, or troubleshoot
+  Advanced Coding rules in Encompass (by Ellie Mae / ICE Mortgage Technology). This
+  includes Field Triggers, Field Data Entry validation, Milestone Completion conditions,
+  Loan Form Printing rules, and Advanced Conditions. Trigger this skill any time the
+  user mentions Encompass business rules, triggers, VB.NET in Encompass, custom
+  conditions, field rules, or asks how to make a field auto-populate or validate in
+  Encompass — even if they don't use the phrase "advanced coding."
 ---
 
-# ICE Mortgage Technology — Secure Scripting Framework
+# Encompass Advanced Coding for Business Rules
 
-This skill covers writing, troubleshooting, and debugging JavaScript-based
-scripting code inside the **ICE Secure Scripting Framework** for Encompass.
-It targets Custom Forms, Custom Tools, and Plugins running as guests in the
-Encompass application — including smart logging and debugging patterns.
+This skill helps you write, explain, and troubleshoot Advanced Coding rules in Encompass.
+It is written for a mixed audience — Encompass admins who may not have a coding background
+as well as more technical users. Plain-English explanations are included alongside code examples.
 
 ---
 
-## What Is the Secure Scripting Framework?
+## Background: What Is Advanced Coding?
 
-The Secure Scripting Framework lets developers embed JavaScript inside Encompass
-guests (Custom Forms, Custom Tools, Plugins). Scripts run in a sandboxed browser
-context and interact with the host application through a set of **Scripting Objects**
-exposed via the `elli.script` API.
+Encompass has built-in "point and click" business rules for common scenarios (e.g., "apply
+this rule only for FHA loans"). When your scenario is more complex — comparing multiple
+fields, doing math, or reacting to user input — you use **Advanced Coding** instead.
 
-**Supported integration types:**
-- Custom Form
-- Custom Tool
-- Plugin
+Advanced Coding is written in **Visual Basic .NET (VB.NET)**. You don't need to be a
+full developer, but you do need to follow the syntax carefully. The key concepts:
 
-**Key constraint:** Scripts cannot access the DOM directly or make unrestricted
-network calls — all host interaction goes through the scripting objects.
+- **Field references**: Use `[FieldID]` to read a field. Example: `[19]` is Loan Purpose.
+- **Numeric fields**: Use `[#FieldID]` to treat a field as a number. Example: `[#1109]` is Loan Amount as a number.
+- **Date fields**: Use `[@FieldID]` to treat a field as a date.
+- **Custom fields**: Prefix with `CX.` — e.g., `[CX.MYFIELD]`.
+- **Setting a field value** (triggers only): `[FieldID] = "value"`
 
 ---
 
-## Accessing Scripting Objects
+## Rule Types That Support Advanced Coding
 
-All objects are accessed via `elli.script.getObject()` using the object's
-lowercase string ID. This is **case-sensitive**.
+### 1. Advanced Conditions
+Used as the *condition* (the "when does this rule apply?") on any business rule.
+Must evaluate to **True or False**.
 
-```javascript
-const loan    = await elli.script.getObject("loan");
-const app     = await elli.script.getObject("application");
-const auth    = await elli.script.getObject("auth");
-const http    = await elli.script.getObject("http");
-const session = await elli.script.getObject("session");
-const script  = await elli.script.getObject("script");
+**Where to find it:** Any business rule → "Is there a condition?" → Yes → Select "Advanced Conditions"
+
+**Syntax examples:**
+```vb
+' Apply rule only for Purchase loans over $1,000,000 in NY or NJ
+[19] = "Purchase" And [#136] > 999999 And ([14] = "NY" Or [14] = "NJ")
+
+' Apply only for loans originated on or after Jan 1, 2010
+[@MS.START] > #1/1/2010#
+
+' Different loan amount thresholds by state (CA vs. everywhere else)
+IIF([14] = "CA", [#1109] > 200000, [#1109] > 300000)
+
+' Apply when loan amount exceeds $500,000
+[#1109] > 500000
 ```
 
-> All `getObject` calls are async — always `await` them.
+> **Plain English tip:** Think of this like a filter — the rule only "turns on" when
+> your expression is True. If there's any error in the code, the rule is skipped entirely.
 
 ---
 
-## Available Scripting Objects
+### 2. Field Data Entry (Validation Rules)
+Used to **validate what a user types** into a specific field before saving it.
+- Only available when the rule has **no other conditions** (set condition to "No - Always apply").
+- Runs *before* the field value is saved.
+- Use `Value` to refer to what the user just typed.
+- Call `Fail("your message")` to reject the input and show the user a message.
 
-| Object ID     | Description |
-|---------------|-------------|
-| `application` | UI-level events and context for the host application |
-| `auth`        | Retrieve authentication tokens for API calls |
-| `http`        | Make HTTP requests to approved endpoints |
-| `loan`        | Read/write loan field data |
-| `session`     | Access current user session info |
-| `script`      | Control the script lifecycle (close, resize, etc.) |
+**Where to find it:** Settings → Business Rules → Field Data Entry → New → Value Rule tab → Advanced Coding
 
-Each object is a **singleton** — call `getObject` once and cache the result.
+**Key functions:**
+| Function | What it does |
+|----------|-------------|
+| `Value` | The text the user just typed into the field |
+| `XDec(Value)` | Converts Value to a decimal number safely |
+| `Fail("message")` | Rejects the input and shows the message to the user |
+| `[#FieldID]` | Reads another field as a number |
 
----
-
-## Application Object
-
-**Object ID:** `application`
-**Available in:** Custom Form, Custom Tool, Plugin
-
-### Events
-
-| Event | Description | Feedback |
-|-------|-------------|----------|
-| `login` | Fires after user is fully logged in and UI is rendered. Does not fire for super administrator users — test with a non-admin account. | none |
-
-### Methods
-
-#### `getApplicationContext()`
-Returns a JSON object with environment and route information.
-
-```javascript
-const app     = await elli.script.getObject("application");
-const context = await app.getApplicationContext();
-// context.env.apiHost => "https://api.elliemae.com"
-// context.route.url, context.route.type, context.route.name, context.route.id
+**Example — Reject if custom field exceeds loan amount:**
+```vb
+If XDec(Value) > [#1109] Then
+    Fail("This field's value cannot exceed the amount of the loan.")
+End If
 ```
 
-**Sample return value:**
-```json
-{
-  "env": { "apiHost": "https://api.elliemae.com" },
-  "route": {
-    "url": "https://encompass.ice.com/pipeline/12345b77-.../custom-tools-tool",
-    "type": "CUSTOM_TOOL",
-    "name": "My Pipeline",
-    "id": "GUID"
-  }
-}
+**Example — Different limits by loan program:**
+```vb
+Select Case [1401]
+    Case "5/1 ARM"
+        If XDec(Value) > 650000 Then
+            Fail("Loan amount cannot exceed $650,000 for a 5/1 ARM.")
+        End If
+    Case "3/1 ARM"
+        If Value <> "" And XDec(Value) < 30000 Then
+            Fail("Loan amount must be at least $30,000 for a 3/1 ARM.")
+        End If
+    Case "30 Year Fixed"
+        If XDec(Value) > 450000 Then
+            Fail("Loan amount cannot exceed $450,000 for a 30 Year Fixed.")
+        End If
+End Select
 ```
 
-**Possible `route.type` values:**
+**Example — Sum multiple GFE fee fields and compare:**
+```vb
+Dim sum As Decimal = 0
+Dim i As Integer
+Dim fieldIds As String() = New String() {"454", "1093", "640", "641", "329", "L228", "L230"}
+For i = 0 To fieldIds.Length - 1
+    sum = sum + XDec(Fields(fieldIds(i)))
+Next
+If XDec(Value) > sum Then
+    Fail("The discount value cannot exceed the sum of the prepaid charges.")
+End If
+```
 
-| type | Description |
-|------|-------------|
-| `GLOBAL_CUSTOM_TOOL` | Global custom tool pipeline view |
-| `CUSTOM_TOOL` | Loan-level custom tool |
-| `CUSTOM_FORM` | Custom form inside a loan (IFB) |
-| `STANDARD_FORM` | Standard form inside a loan |
-| `OTHER` | Any other context (name and id may be null) |
+> **Plain English tip:** If your code finishes without calling `Fail()`, Encompass
+> considers the value valid and saves it. If any unexpected error occurs, the validation
+> *fails automatically* and the user sees a generic error.
 
 ---
 
-## Auth Object
+### 3. Milestone Completion (Advanced Conditions tab)
+Used to enforce **extra requirements before a milestone can be completed**.
+Uses the same `Fail("message")` pattern as Field Data Entry.
 
-**Object ID:** `auth`
-**Available in:** Custom Form, Custom Tool, Plugin
+**Where to find it:** Settings → Business Rules → Milestone Completion → New →
+Advanced Conditions tab → Add
 
-#### `getAccessToken()`
-Returns the current user's OAuth access token as a string.
-
-```javascript
-const auth  = await elli.script.getObject("auth");
-const token = await auth.getAccessToken();
-
-fetch("https://api.elliemae.com/...", {
-  headers: { "Authorization": `Bearer ${token}` }
-});
-```
-
-> **Security:** Never log the token value. Log `!!token` (a boolean) instead.
-
----
-
-## Http Object
-
-**Object ID:** `http`
-**Available in:** Custom Form, Custom Tool, Plugin
-
-#### `request(config)`
-Sends an HTTP request. Config mirrors standard fetch options.
-
-```javascript
-const http     = await elli.script.getObject("http");
-const response = await http.request({
-  method: "GET",
-  url: "https://api.elliemae.com/encompass/v3/loans/...",
-  headers: { "Authorization": `Bearer ${token}` }
-});
-const data = JSON.parse(response.body);
+**Example — Require 2+ years at current address before completing Qualification:**
+```vb
+If [#FR0112] < 2 Then
+    Fail("At least 2 years of residence is required to complete the milestone.")
+End If
 ```
 
 ---
 
-## Loan Object
+### 4. Loan Form Printing (Print Suppression)
+Used to **block printing a form** until certain conditions are met.
+Same `Fail()` pattern applies.
 
-**Object ID:** `loan`
-**Available in:** Custom Form, Custom Tool, Plugin
+**Where to find it:** Settings → Business Rules → Loan Form Printing → New →
+Print Form Suppression Rule → Advanced Coding tab
 
-#### `getField(fieldId)` — Read a single field
-```javascript
-const loan  = await elli.script.getObject("loan");
-const state = await loan.getField("14");   // Subject Property State
-const amt   = await loan.getField("1109"); // Loan Amount
+---
+
+### 5. Field Triggers
+Triggers **run automatically after a field value changes** and can read/write other
+fields in the loan. This is the most powerful rule type.
+
+**Where to find it:** Settings → Business Rules → Field Triggers → New →
+Action section → "Run advanced code"
+
+**Trigger code receives three parameters automatically:**
+| Parameter | Meaning |
+|-----------|---------|
+| `FieldID` | The ID of the field that was just changed |
+| `PriorValue` | What the field contained before the change |
+| `NewValue` | What the field was just changed to |
+
+**Key concepts unique to triggers:**
+
+- **Setting a field:** `[FieldID] = "new value"` (same bracket notation, but on the left side)
+- **IgnoreValidationErrors:** Add this as the first line to bypass field-level restrictions
+  that might block your trigger from writing to certain fields.
+- **No infinite loops:** If a trigger changes a field that would re-fire the same trigger,
+  Encompass automatically prevents it from running a second time.
+
+**Example — Set Broker Company Name based on property state:**
+```vb
+If [14] = "CA" Then
+    [315] = "California Mortgage Corp"
+ElseIf [14] = "NV" Then
+    [315] = "Nevada Home Lending"
+Else
+    [315] = "US Mortgages"
+End If
 ```
 
-#### `getFields(fieldIds[])` — Batch read multiple fields
-```javascript
-const fields = await loan.getFields(["14", "19", "1109"]);
-// fields["14"] => "CA"
+**Example — Calculate a custom profit field, double it for refis:**
+```vb
+IgnoreValidationErrors
+[CX.MYPROFIT] = [#1109] * [#3] * 0.02 / 100.0
+If [19] = "NoCashOutRefi" Then
+    [CX.MYPROFIT] = 2 * [#CX.MYPROFIT]
+End If
 ```
 
-#### `setField(fieldId, value)` — Write a field
-```javascript
-await loan.setField("CX.MYFLAG", "Y");
-await loan.setField("1109", "450000");
-```
-
-#### `save()` — Persist changes
-```javascript
-await loan.save(); // Required — setField does NOT auto-save
+**Example — Use a document receipt date to set a custom field:**
+```vb
+If [@Document.DateReceived.Credit Report] > #3/15/2010# Then
+    [CX.REPORTDATE] = [Document.DateReceived.Credit Report]
+End If
 ```
 
 ---
 
-## Session Object
+## Working with Milestones, Tasks, and Documents in Triggers
 
-**Object ID:** `session`
-**Available in:** Custom Form, Custom Tool, Plugin
+When you need to check or update things beyond fields (milestones, tasks, documents),
+use these built-in functions:
 
-#### `getUser()`
-Returns the current user's info as a JSON object.
+**Milestone functions:**
+| Function | What it does |
+|----------|-------------|
+| `Milestones.IsComplete("Name")` | Returns True if that milestone is done |
+| `Milestones.SetComplete("Name")` | Marks the milestone as complete |
 
-```javascript
-const session = await elli.script.getObject("session");
-const user    = await session.getUser();
-// user.id, user.name, user.email, user.role
-```
+**Task functions:**
+| Function | What it does |
+|----------|-------------|
+| `Tasks.Exists("Title")` | True if the task exists in the loan |
+| `Tasks.IsComplete("Title")` | True if the task is marked complete |
+| `Tasks.SetComplete("Title", True)` | Marks the task complete |
 
----
+**Document functions:**
+| Function | What it does |
+|----------|-------------|
+| `Documents.Exists("Title")` | True if the document is in the loan |
+| `Documents.IsReceived("Title")` | True if the document has been received |
+| `Documents.IsOrdered("Title")` | True if the document has been ordered |
+| `Documents.IsExpired("Title")` | True if the document has expired |
 
-## Script Object
-
-**Object ID:** `script`
-**Available in:** Custom Form, Custom Tool, Plugin
-
-#### `close()`
-Closes the custom tool or form window.
-
-```javascript
-const script = await elli.script.getObject("script");
-await script.close();
-```
-
----
-
-## Async/Await Programming Model
-
-All scripting object methods are **Promise-based**. Always use `async/await`.
-
-**Top-level async IIFE (recommended pattern):**
-```javascript
-(async () => {
-  const loan    = await elli.script.getObject("loan");
-  const loanAmt = await loan.getField("1109");
-  console.log("[MyTool] loanAmt:", loanAmt);
-})();
-```
-
-**Event listener pattern:**
-```javascript
-(async () => {
-  const app = await elli.script.getObject("application");
-  app.addEventListener("login", async () => {
-    const session = await elli.script.getObject("session");
-    const user    = await session.getUser();
-    console.log("[login] user:", user.name);
-  });
-})();
-```
-
----
-
-## Debugging with console.log
-
-Logs appear in the **browser DevTools console** inside the Encompass embedded
-Chromium window. Open with `F12` or right-click → Inspect.
-
-> **Never use `alert()`** — it blocks the UI thread and can hang Encompass.
-
-### Choosing the Right Console Method
-
-| Method | When to use |
-|--------|-------------|
-| `console.log()` | General values, flow checkpoints |
-| `console.warn()` | Unexpected but non-fatal situation |
-| `console.error()` | Caught errors, failed conditions |
-| `console.table()` | Arrays of objects — much more readable than log |
-| `console.group()` / `console.groupEnd()` | Collapsible sections for related output |
-| `console.groupCollapsed()` | Same but starts collapsed — great for noisy loops |
-| `console.time()` / `console.timeEnd()` | Measure how long something takes |
-| `console.assert()` | Only logs if condition is false — great sanity checks |
-| `console.trace()` | Prints the call stack — use when you need to know *how* you got here |
-
-### Always Label Your Logs
-
-Use a **bracket tag** to show which component or function the log came from:
-
-```javascript
-// ❌ Bad — what is this?
-console.log(user);
-
-// ✅ Good
-console.log("[fetchLoan] response:", response);
-console.log("[AuthHelper] token present:", !!token); // never log the token itself
-```
-
-### Grouping Related Logs
-
-```javascript
-console.group("[fetchLoan]");
-console.log("loanId:", loanId);
-console.log("token present:", !!token);
-console.log("response status:", response.status);
-console.groupEnd();
-```
-
-Use `console.groupCollapsed()` inside loops or frequent event handlers to keep
-the console readable.
-
-### Logging Objects and Arrays
-
-```javascript
-// ❌ Coerces to string — logs [object Object]
-console.log("data: " + data);
-
-// ✅ Logs the full object
-console.log("data:", data);
-
-// ✅ Snapshot — won't mutate if the object changes later
-console.log("data:", JSON.parse(JSON.stringify(data)));
-
-// ✅ Arrays of objects — renders as a readable grid
-console.table(users);
-```
-
-### Logging Async Flows
-
-```javascript
-// ❌ Logs Promise {} — not the value
-console.log("result:", fetchLoan());
-
-// ✅ Always await first, then log
-const result = await fetchLoan();
-console.log("[fetchLoan] result:", result);
-```
-
-### Gated Debug Logging (keep production clean)
-
-```javascript
-const DEBUG = true; // flip to false before committing
-
-function log(...args) {
-  if (DEBUG) console.log("[APP]", ...args);
-}
-
-log("fields loaded:", fields);
-```
-
-### Performance Timing
-
-```javascript
-console.time("fetchLoan");
-const data = await fetchLoan(loanId);
-console.timeEnd("fetchLoan");
-// Output: fetchLoan: 243ms
-```
-
-### Assertions for Sanity Checks
-
-```javascript
-// Only fires when condition is FALSE — zero noise when things are correct
-console.assert(loanId !== null, "loanId should never be null", { loanId });
-console.assert(Array.isArray(fields), "fields must be an array", fields);
-```
-
-### Encompass-Specific Debugging Example
-
-```javascript
-(async () => {
-  const loan   = await elli.script.getObject("loan");
-  const fields = await loan.getFields(["14", "19", "1109"]);
-
-  console.group("[LoanDebug] fields snapshot");
-  console.table(Object.entries(fields).map(([id, val]) => ({ id, val })));
-  console.groupEnd();
-})();
-```
-
-### Cleanup Checklist Before Committing
-
-- [ ] Remove bare `console.log(value)` statements with no label
-- [ ] Replace debug logs with a `DEBUG` flag or remove entirely
-- [ ] Use `console.error()` for actual errors, not `console.log`
-- [ ] Confirm no tokens, passwords, or PII are logged
-- [ ] Replace multi-line related logs with `console.group()` blocks
-
----
-
-## Full Code Samples
-
-### Read loan fields and call the Encompass API
-
-```javascript
-(async () => {
-  const auth = await elli.script.getObject("auth");
-  const loan = await elli.script.getObject("loan");
-  const http = await elli.script.getObject("http");
-
-  const token  = await auth.getAccessToken();
-  const loanId = await loan.getField("364"); // Loan GUID
-
-  console.log("[fetchLoan] loanId:", loanId);
-  console.log("[fetchLoan] token present:", !!token);
-
-  const resp = await http.request({
-    method: "GET",
-    url: `https://api.elliemae.com/encompass/v3/loans/${loanId}`,
-    headers: {
-      "Authorization": `Bearer ${token}`,
-      "Content-Type": "application/json"
-    }
-  });
-
-  const loanData = JSON.parse(resp.body);
-  console.group("[fetchLoan] response");
-  console.log("status:", resp.status);
-  console.log("data:", loanData);
-  console.groupEnd();
-})();
-```
-
-### Conditionally set a field based on another field
-
-```javascript
-(async () => {
-  const loan  = await elli.script.getObject("loan");
-  const state = await loan.getField("14");
-
-  console.log("[setRegion] state:", state);
-
-  if (state === "CA") {
-    await loan.setField("CX.REGION", "West");
-  } else if (["NY", "NJ", "CT"].includes(state)) {
-    await loan.setField("CX.REGION", "Northeast");
-  } else {
-    await loan.setField("CX.REGION", "Other");
-  }
-
-  await loan.save();
-  console.log("[setRegion] saved.");
-})();
-```
-
-### React to login event and display user info
-
-```javascript
-(async () => {
-  const app     = await elli.script.getObject("application");
-  const session = await elli.script.getObject("session");
-
-  app.addEventListener("login", async () => {
-    const user = await session.getUser();
-    console.log("[login] user:", user.name);
-    document.getElementById("welcome").textContent = `Welcome, ${user.name}`;
-  });
-})();
+**Example — Mark a task complete when a document is received:**
+```vb
+If Documents.IsReceived("Credit Report") Then
+    Tasks.SetComplete("Pull borrower credit")
+End If
 ```
 
 ---
 
 ## Common Gotchas
 
-| Gotcha | Fix |
-|--------|-----|
-| Forgot `await` on `getObject()` | Returns a Promise, not the object — always await |
-| `login` event not firing | Super admins are excluded — test with a non-admin account |
-| Calling `getObject()` multiple times | Objects are singletons — cache the result in a variable |
-| `setField` not persisting | Must call `loan.save()` explicitly |
-| Wrong object ID casing | IDs are case-sensitive — `"Loan"` fails, use `"loan"` |
-| HTTP request blocked | The `http` object only reaches pre-approved domains |
-| `alert()` hanging the app | Use `console.log()` or `console.warn()` instead |
-| Logging the auth token | Security risk — log `!!token` (boolean) instead |
-| `console.log(promise)` | Logs `Promise {}` — always `await` before logging |
-| Bare log with no label | Use bracket tags like `[MyTool]` so logs are scannable |
+- **Don't use MsgBox()** or any pop-up UI functions — Encompass runs rules in non-interactive
+  contexts (like API calls) and the application will hang. Use `Fail()` for messages instead.
+- **Value is always a string** — even for number fields. Always use `XDec(Value)` before
+  doing math on it.
+- **Virtual field IDs are read-only** — you can read `[Document.DateReceived.Credit Report]`
+  but cannot assign to it. Use the Document/Task/Milestone functions to make changes.
+- **Errors = rule skipped** — for conditions, any code error causes the rule to be ignored.
+  For validation rules, errors cause the validation to fail.
 
 ---
 
-## Quick Reference: Common Loan Field IDs
+## Quick Reference: Common Field IDs
 
 | Field ID | Description |
 |----------|-------------|
 | 14 | Subject Property State |
 | 19 | Loan Purpose |
 | 136 | Purchase Price |
-| 364 | Loan GUID |
+| 315 | Broker Company Name |
 | 1109 | Loan Amount |
 | 1401 | Loan Program |
 | 3 | Interest Rate |
+| FR0112 | Years at Present Address |
+| MS.START | File Started Date |
 | CX.* | Custom Fields (prefix) |
-
----
-
-## Relationship to Advanced Coding (VB.NET Rules)
-
-This skill covers **JavaScript-based scripting** in Custom Forms, Custom Tools,
-and Plugins. For **VB.NET-based business rules** (Field Triggers, Field Data Entry
-validation, Milestone Completion, Loan Form Printing), see the
-`encompass-advanced-coding` skill instead.
-
-| Feature | Secure Scripting (this skill) | Advanced Coding |
-|---------|-------------------------------|-----------------|
-| Language | JavaScript | VB.NET |
-| Context | Custom Form / Tool / Plugin | Business Rules engine |
-| Runs in | Guest browser (Chromium) | Server-side rule engine |
-| Can call APIs | Yes (via http object) | No |
-| Can modify UI | Yes (DOM in guest) | No |
-| Triggered by | Events / page load | Field changes, milestones |
