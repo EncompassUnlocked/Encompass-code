@@ -1,0 +1,2103 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Use this skill whenever the user wants to write, explain, debug, or work with ICE Mortgage Technology (Encompass) Secure Scripting Framework code — including Custom Forms, Custom Tools, and Plugins. Trigger this skill any time the user mentions Encompass scripting, elli.script, scripting objects (Application, Auth, Http, Loan, Session, Script), JavaScript in Encompass, Custom Tool scripting, Plugin scripting, or asks how to interact with loan data, UI, authentication, or HTTP calls from within an Encompass guest context. Also trigger when the user asks about debugging, console.log, logging patterns, or structured output in an Encompass or JavaScript context — even if they don't use the phrase "Secure Scripting Framework."
+">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>ICE Mortgage Technology — Secure Scripting Framework - Encompass Unlocked</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#ice-mortgage-technology-secure-scripting-framework" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Encompass Unlocked" class="md-header__button md-logo" aria-label="Encompass Unlocked" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Encompass Unlocked
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              ICE Mortgage Technology — Secure Scripting Framework
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../web-code/button-clicks/button-hard-stop/" class="md-tabs__link">
+          
+  
+  
+  Web Code
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../field-triggers/encompass-timestamp-trigger/" class="md-tabs__link">
+          
+  
+  
+  Field Triggers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Encompass Unlocked" class="md-nav__button md-logo" aria-label="Encompass Unlocked" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Encompass Unlocked
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button clicks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Button clicks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-hard-stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button hard stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-click-standard-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button click to standard page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-goto-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button goto tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-field-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button field update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-conditional-field-color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button conditional field color
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button modal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field logging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Field logging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/field-logging/button-field-logging-audit-trail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button field logging and audit trail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Triggers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Field Triggers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../field-triggers/encompass-timestamp-trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date & Time Stamp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Skills with Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Available Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Available Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../field-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#what-is-the-secure-scripting-framework" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        What Is the Secure Scripting Framework?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#accessing-scripting-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Accessing Scripting Objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#available-scripting-objects" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Available Scripting Objects
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#application-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Application Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Application Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#events" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Events
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#methods" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Methods
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Methods">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getapplicationcontext" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getApplicationContext()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#auth-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Auth Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Auth Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getaccesstoken" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getAccessToken()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#http-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Http Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Http Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#requestconfig" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        request(config)
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#loan-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Loan Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Loan Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getfieldfieldid-read-a-single-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getField(fieldId) — Read a single field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#getfieldsfieldids-batch-read-multiple-fields" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getFields(fieldIds[]) — Batch read multiple fields
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#setfieldfieldid-value-write-a-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        setField(fieldId, value) — Write a field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#save-persist-changes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        save() — Persist changes
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#session-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Session Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Session Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#getuser" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        getUser()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#script-object" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Script Object
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Script Object">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#close" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        close()
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#asyncawait-programming-model" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Async/Await Programming Model
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#debugging-with-consolelog" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Debugging with console.log
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Debugging with console.log">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#choosing-the-right-console-method" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Choosing the Right Console Method
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#always-label-your-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Always Label Your Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#grouping-related-logs" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Grouping Related Logs
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-objects-and-arrays" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging Objects and Arrays
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#logging-async-flows" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Logging Async Flows
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gated-debug-logging-keep-production-clean" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Gated Debug Logging (keep production clean)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#performance-timing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Performance Timing
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#assertions-for-sanity-checks" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Assertions for Sanity Checks
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#encompass-specific-debugging-example" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Encompass-Specific Debugging Example
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cleanup-checklist-before-committing" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Cleanup Checklist Before Committing
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#full-code-samples" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Full Code Samples
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Full Code Samples">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#read-loan-fields-and-call-the-encompass-api" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Read loan fields and call the Encompass API
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#conditionally-set-a-field-based-on-another-field" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Conditionally set a field based on another field
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#react-to-login-event-and-display-user-info" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        React to login event and display user info
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-common-loan-field-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference: Common Loan Field IDs
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#relationship-to-advanced-coding-vbnet-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Relationship to Advanced Coding (VB.NET Rules)
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="ice-mortgage-technology-secure-scripting-framework">ICE Mortgage Technology — Secure Scripting Framework</h1>
+<p>This skill covers writing, troubleshooting, and debugging JavaScript-based
+scripting code inside the <strong>ICE Secure Scripting Framework</strong> for Encompass.
+It targets Custom Forms, Custom Tools, and Plugins running as guests in the
+Encompass application — including smart logging and debugging patterns.</p>
+<hr />
+<h2 id="what-is-the-secure-scripting-framework">What Is the Secure Scripting Framework?</h2>
+<p>The Secure Scripting Framework lets developers embed JavaScript inside Encompass
+guests (Custom Forms, Custom Tools, Plugins). Scripts run in a sandboxed browser
+context and interact with the host application through a set of <strong>Scripting Objects</strong>
+exposed via the <code>elli.script</code> API.</p>
+<p><strong>Supported integration types:</strong>
+- Custom Form
+- Custom Tool
+- Plugin</p>
+<p><strong>Key constraint:</strong> Scripts cannot access the DOM directly or make unrestricted
+network calls — all host interaction goes through the scripting objects.</p>
+<hr />
+<h2 id="accessing-scripting-objects">Accessing Scripting Objects</h2>
+<p>All objects are accessed via <code>elli.script.getObject()</code> using the object's
+lowercase string ID. This is <strong>case-sensitive</strong>.</p>
+<pre><code class="language-javascript">const loan    = await elli.script.getObject(&quot;loan&quot;);
+const app     = await elli.script.getObject(&quot;application&quot;);
+const auth    = await elli.script.getObject(&quot;auth&quot;);
+const http    = await elli.script.getObject(&quot;http&quot;);
+const session = await elli.script.getObject(&quot;session&quot;);
+const script  = await elli.script.getObject(&quot;script&quot;);
+</code></pre>
+<blockquote>
+<p>All <code>getObject</code> calls are async — always <code>await</code> them.</p>
+</blockquote>
+<hr />
+<h2 id="available-scripting-objects">Available Scripting Objects</h2>
+<table>
+<thead>
+<tr>
+<th>Object ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>application</code></td>
+<td>UI-level events and context for the host application</td>
+</tr>
+<tr>
+<td><code>auth</code></td>
+<td>Retrieve authentication tokens for API calls</td>
+</tr>
+<tr>
+<td><code>http</code></td>
+<td>Make HTTP requests to approved endpoints</td>
+</tr>
+<tr>
+<td><code>loan</code></td>
+<td>Read/write loan field data</td>
+</tr>
+<tr>
+<td><code>session</code></td>
+<td>Access current user session info</td>
+</tr>
+<tr>
+<td><code>script</code></td>
+<td>Control the script lifecycle (close, resize, etc.)</td>
+</tr>
+</tbody>
+</table>
+<p>Each object is a <strong>singleton</strong> — call <code>getObject</code> once and cache the result.</p>
+<hr />
+<h2 id="application-object">Application Object</h2>
+<p><strong>Object ID:</strong> <code>application</code>
+<strong>Available in:</strong> Custom Form, Custom Tool, Plugin</p>
+<h3 id="events">Events</h3>
+<table>
+<thead>
+<tr>
+<th>Event</th>
+<th>Description</th>
+<th>Feedback</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>login</code></td>
+<td>Fires after user is fully logged in and UI is rendered. Does not fire for super administrator users — test with a non-admin account.</td>
+<td>none</td>
+</tr>
+</tbody>
+</table>
+<h3 id="methods">Methods</h3>
+<h4 id="getapplicationcontext"><code>getApplicationContext()</code></h4>
+<p>Returns a JSON object with environment and route information.</p>
+<pre><code class="language-javascript">const app     = await elli.script.getObject(&quot;application&quot;);
+const context = await app.getApplicationContext();
+// context.env.apiHost =&gt; &quot;https://api.elliemae.com&quot;
+// context.route.url, context.route.type, context.route.name, context.route.id
+</code></pre>
+<p><strong>Sample return value:</strong></p>
+<pre><code class="language-json">{
+  &quot;env&quot;: { &quot;apiHost&quot;: &quot;https://api.elliemae.com&quot; },
+  &quot;route&quot;: {
+    &quot;url&quot;: &quot;https://encompass.ice.com/pipeline/12345b77-.../custom-tools-tool&quot;,
+    &quot;type&quot;: &quot;CUSTOM_TOOL&quot;,
+    &quot;name&quot;: &quot;My Pipeline&quot;,
+    &quot;id&quot;: &quot;GUID&quot;
+  }
+}
+</code></pre>
+<p><strong>Possible <code>route.type</code> values:</strong></p>
+<table>
+<thead>
+<tr>
+<th>type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>GLOBAL_CUSTOM_TOOL</code></td>
+<td>Global custom tool pipeline view</td>
+</tr>
+<tr>
+<td><code>CUSTOM_TOOL</code></td>
+<td>Loan-level custom tool</td>
+</tr>
+<tr>
+<td><code>CUSTOM_FORM</code></td>
+<td>Custom form inside a loan (IFB)</td>
+</tr>
+<tr>
+<td><code>STANDARD_FORM</code></td>
+<td>Standard form inside a loan</td>
+</tr>
+<tr>
+<td><code>OTHER</code></td>
+<td>Any other context (name and id may be null)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="auth-object">Auth Object</h2>
+<p><strong>Object ID:</strong> <code>auth</code>
+<strong>Available in:</strong> Custom Form, Custom Tool, Plugin</p>
+<h4 id="getaccesstoken"><code>getAccessToken()</code></h4>
+<p>Returns the current user's OAuth access token as a string.</p>
+<pre><code class="language-javascript">const auth  = await elli.script.getObject(&quot;auth&quot;);
+const token = await auth.getAccessToken();
+
+fetch(&quot;https://api.elliemae.com/...&quot;, {
+  headers: { &quot;Authorization&quot;: `Bearer ${token}` }
+});
+</code></pre>
+<blockquote>
+<p><strong>Security:</strong> Never log the token value. Log <code>!!token</code> (a boolean) instead.</p>
+</blockquote>
+<hr />
+<h2 id="http-object">Http Object</h2>
+<p><strong>Object ID:</strong> <code>http</code>
+<strong>Available in:</strong> Custom Form, Custom Tool, Plugin</p>
+<h4 id="requestconfig"><code>request(config)</code></h4>
+<p>Sends an HTTP request. Config mirrors standard fetch options.</p>
+<pre><code class="language-javascript">const http     = await elli.script.getObject(&quot;http&quot;);
+const response = await http.request({
+  method: &quot;GET&quot;,
+  url: &quot;https://api.elliemae.com/encompass/v3/loans/...&quot;,
+  headers: { &quot;Authorization&quot;: `Bearer ${token}` }
+});
+const data = JSON.parse(response.body);
+</code></pre>
+<hr />
+<h2 id="loan-object">Loan Object</h2>
+<p><strong>Object ID:</strong> <code>loan</code>
+<strong>Available in:</strong> Custom Form, Custom Tool, Plugin</p>
+<h4 id="getfieldfieldid-read-a-single-field"><code>getField(fieldId)</code> — Read a single field</h4>
+<pre><code class="language-javascript">const loan  = await elli.script.getObject(&quot;loan&quot;);
+const state = await loan.getField(&quot;14&quot;);   // Subject Property State
+const amt   = await loan.getField(&quot;1109&quot;); // Loan Amount
+</code></pre>
+<h4 id="getfieldsfieldids-batch-read-multiple-fields"><code>getFields(fieldIds[])</code> — Batch read multiple fields</h4>
+<pre><code class="language-javascript">const fields = await loan.getFields([&quot;14&quot;, &quot;19&quot;, &quot;1109&quot;]);
+// fields[&quot;14&quot;] =&gt; &quot;CA&quot;
+</code></pre>
+<h4 id="setfieldfieldid-value-write-a-field"><code>setField(fieldId, value)</code> — Write a field</h4>
+<pre><code class="language-javascript">await loan.setField(&quot;CX.MYFLAG&quot;, &quot;Y&quot;);
+await loan.setField(&quot;1109&quot;, &quot;450000&quot;);
+</code></pre>
+<h4 id="save-persist-changes"><code>save()</code> — Persist changes</h4>
+<pre><code class="language-javascript">await loan.save(); // Required — setField does NOT auto-save
+</code></pre>
+<hr />
+<h2 id="session-object">Session Object</h2>
+<p><strong>Object ID:</strong> <code>session</code>
+<strong>Available in:</strong> Custom Form, Custom Tool, Plugin</p>
+<h4 id="getuser"><code>getUser()</code></h4>
+<p>Returns the current user's info as a JSON object.</p>
+<pre><code class="language-javascript">const session = await elli.script.getObject(&quot;session&quot;);
+const user    = await session.getUser();
+// user.id, user.name, user.email, user.role
+</code></pre>
+<hr />
+<h2 id="script-object">Script Object</h2>
+<p><strong>Object ID:</strong> <code>script</code>
+<strong>Available in:</strong> Custom Form, Custom Tool, Plugin</p>
+<h4 id="close"><code>close()</code></h4>
+<p>Closes the custom tool or form window.</p>
+<pre><code class="language-javascript">const script = await elli.script.getObject(&quot;script&quot;);
+await script.close();
+</code></pre>
+<hr />
+<h2 id="asyncawait-programming-model">Async/Await Programming Model</h2>
+<p>All scripting object methods are <strong>Promise-based</strong>. Always use <code>async/await</code>.</p>
+<p><strong>Top-level async IIFE (recommended pattern):</strong></p>
+<pre><code class="language-javascript">(async () =&gt; {
+  const loan    = await elli.script.getObject(&quot;loan&quot;);
+  const loanAmt = await loan.getField(&quot;1109&quot;);
+  console.log(&quot;[MyTool] loanAmt:&quot;, loanAmt);
+})();
+</code></pre>
+<p><strong>Event listener pattern:</strong></p>
+<pre><code class="language-javascript">(async () =&gt; {
+  const app = await elli.script.getObject(&quot;application&quot;);
+  app.addEventListener(&quot;login&quot;, async () =&gt; {
+    const session = await elli.script.getObject(&quot;session&quot;);
+    const user    = await session.getUser();
+    console.log(&quot;[login] user:&quot;, user.name);
+  });
+})();
+</code></pre>
+<hr />
+<h2 id="debugging-with-consolelog">Debugging with console.log</h2>
+<p>Logs appear in the <strong>browser DevTools console</strong> inside the Encompass embedded
+Chromium window. Open with <code>F12</code> or right-click → Inspect.</p>
+<blockquote>
+<p><strong>Never use <code>alert()</code></strong> — it blocks the UI thread and can hang Encompass.</p>
+</blockquote>
+<h3 id="choosing-the-right-console-method">Choosing the Right Console Method</h3>
+<table>
+<thead>
+<tr>
+<th>Method</th>
+<th>When to use</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>console.log()</code></td>
+<td>General values, flow checkpoints</td>
+</tr>
+<tr>
+<td><code>console.warn()</code></td>
+<td>Unexpected but non-fatal situation</td>
+</tr>
+<tr>
+<td><code>console.error()</code></td>
+<td>Caught errors, failed conditions</td>
+</tr>
+<tr>
+<td><code>console.table()</code></td>
+<td>Arrays of objects — much more readable than log</td>
+</tr>
+<tr>
+<td><code>console.group()</code> / <code>console.groupEnd()</code></td>
+<td>Collapsible sections for related output</td>
+</tr>
+<tr>
+<td><code>console.groupCollapsed()</code></td>
+<td>Same but starts collapsed — great for noisy loops</td>
+</tr>
+<tr>
+<td><code>console.time()</code> / <code>console.timeEnd()</code></td>
+<td>Measure how long something takes</td>
+</tr>
+<tr>
+<td><code>console.assert()</code></td>
+<td>Only logs if condition is false — great sanity checks</td>
+</tr>
+<tr>
+<td><code>console.trace()</code></td>
+<td>Prints the call stack — use when you need to know <em>how</em> you got here</td>
+</tr>
+</tbody>
+</table>
+<h3 id="always-label-your-logs">Always Label Your Logs</h3>
+<p>Use a <strong>bracket tag</strong> to show which component or function the log came from:</p>
+<pre><code class="language-javascript">// ❌ Bad — what is this?
+console.log(user);
+
+// ✅ Good
+console.log(&quot;[fetchLoan] response:&quot;, response);
+console.log(&quot;[AuthHelper] token present:&quot;, !!token); // never log the token itself
+</code></pre>
+<h3 id="grouping-related-logs">Grouping Related Logs</h3>
+<pre><code class="language-javascript">console.group(&quot;[fetchLoan]&quot;);
+console.log(&quot;loanId:&quot;, loanId);
+console.log(&quot;token present:&quot;, !!token);
+console.log(&quot;response status:&quot;, response.status);
+console.groupEnd();
+</code></pre>
+<p>Use <code>console.groupCollapsed()</code> inside loops or frequent event handlers to keep
+the console readable.</p>
+<h3 id="logging-objects-and-arrays">Logging Objects and Arrays</h3>
+<pre><code class="language-javascript">// ❌ Coerces to string — logs [object Object]
+console.log(&quot;data: &quot; + data);
+
+// ✅ Logs the full object
+console.log(&quot;data:&quot;, data);
+
+// ✅ Snapshot — won't mutate if the object changes later
+console.log(&quot;data:&quot;, JSON.parse(JSON.stringify(data)));
+
+// ✅ Arrays of objects — renders as a readable grid
+console.table(users);
+</code></pre>
+<h3 id="logging-async-flows">Logging Async Flows</h3>
+<pre><code class="language-javascript">// ❌ Logs Promise {} — not the value
+console.log(&quot;result:&quot;, fetchLoan());
+
+// ✅ Always await first, then log
+const result = await fetchLoan();
+console.log(&quot;[fetchLoan] result:&quot;, result);
+</code></pre>
+<h3 id="gated-debug-logging-keep-production-clean">Gated Debug Logging (keep production clean)</h3>
+<pre><code class="language-javascript">const DEBUG = true; // flip to false before committing
+
+function log(...args) {
+  if (DEBUG) console.log(&quot;[APP]&quot;, ...args);
+}
+
+log(&quot;fields loaded:&quot;, fields);
+</code></pre>
+<h3 id="performance-timing">Performance Timing</h3>
+<pre><code class="language-javascript">console.time(&quot;fetchLoan&quot;);
+const data = await fetchLoan(loanId);
+console.timeEnd(&quot;fetchLoan&quot;);
+// Output: fetchLoan: 243ms
+</code></pre>
+<h3 id="assertions-for-sanity-checks">Assertions for Sanity Checks</h3>
+<pre><code class="language-javascript">// Only fires when condition is FALSE — zero noise when things are correct
+console.assert(loanId !== null, &quot;loanId should never be null&quot;, { loanId });
+console.assert(Array.isArray(fields), &quot;fields must be an array&quot;, fields);
+</code></pre>
+<h3 id="encompass-specific-debugging-example">Encompass-Specific Debugging Example</h3>
+<pre><code class="language-javascript">(async () =&gt; {
+  const loan   = await elli.script.getObject(&quot;loan&quot;);
+  const fields = await loan.getFields([&quot;14&quot;, &quot;19&quot;, &quot;1109&quot;]);
+
+  console.group(&quot;[LoanDebug] fields snapshot&quot;);
+  console.table(Object.entries(fields).map(([id, val]) =&gt; ({ id, val })));
+  console.groupEnd();
+})();
+</code></pre>
+<h3 id="cleanup-checklist-before-committing">Cleanup Checklist Before Committing</h3>
+<ul>
+<li>[ ] Remove bare <code>console.log(value)</code> statements with no label</li>
+<li>[ ] Replace debug logs with a <code>DEBUG</code> flag or remove entirely</li>
+<li>[ ] Use <code>console.error()</code> for actual errors, not <code>console.log</code></li>
+<li>[ ] Confirm no tokens, passwords, or PII are logged</li>
+<li>[ ] Replace multi-line related logs with <code>console.group()</code> blocks</li>
+</ul>
+<hr />
+<h2 id="full-code-samples">Full Code Samples</h2>
+<h3 id="read-loan-fields-and-call-the-encompass-api">Read loan fields and call the Encompass API</h3>
+<pre><code class="language-javascript">(async () =&gt; {
+  const auth = await elli.script.getObject(&quot;auth&quot;);
+  const loan = await elli.script.getObject(&quot;loan&quot;);
+  const http = await elli.script.getObject(&quot;http&quot;);
+
+  const token  = await auth.getAccessToken();
+  const loanId = await loan.getField(&quot;364&quot;); // Loan GUID
+
+  console.log(&quot;[fetchLoan] loanId:&quot;, loanId);
+  console.log(&quot;[fetchLoan] token present:&quot;, !!token);
+
+  const resp = await http.request({
+    method: &quot;GET&quot;,
+    url: `https://api.elliemae.com/encompass/v3/loans/${loanId}`,
+    headers: {
+      &quot;Authorization&quot;: `Bearer ${token}`,
+      &quot;Content-Type&quot;: &quot;application/json&quot;
+    }
+  });
+
+  const loanData = JSON.parse(resp.body);
+  console.group(&quot;[fetchLoan] response&quot;);
+  console.log(&quot;status:&quot;, resp.status);
+  console.log(&quot;data:&quot;, loanData);
+  console.groupEnd();
+})();
+</code></pre>
+<h3 id="conditionally-set-a-field-based-on-another-field">Conditionally set a field based on another field</h3>
+<pre><code class="language-javascript">(async () =&gt; {
+  const loan  = await elli.script.getObject(&quot;loan&quot;);
+  const state = await loan.getField(&quot;14&quot;);
+
+  console.log(&quot;[setRegion] state:&quot;, state);
+
+  if (state === &quot;CA&quot;) {
+    await loan.setField(&quot;CX.REGION&quot;, &quot;West&quot;);
+  } else if ([&quot;NY&quot;, &quot;NJ&quot;, &quot;CT&quot;].includes(state)) {
+    await loan.setField(&quot;CX.REGION&quot;, &quot;Northeast&quot;);
+  } else {
+    await loan.setField(&quot;CX.REGION&quot;, &quot;Other&quot;);
+  }
+
+  await loan.save();
+  console.log(&quot;[setRegion] saved.&quot;);
+})();
+</code></pre>
+<h3 id="react-to-login-event-and-display-user-info">React to login event and display user info</h3>
+<pre><code class="language-javascript">(async () =&gt; {
+  const app     = await elli.script.getObject(&quot;application&quot;);
+  const session = await elli.script.getObject(&quot;session&quot;);
+
+  app.addEventListener(&quot;login&quot;, async () =&gt; {
+    const user = await session.getUser();
+    console.log(&quot;[login] user:&quot;, user.name);
+    document.getElementById(&quot;welcome&quot;).textContent = `Welcome, ${user.name}`;
+  });
+})();
+</code></pre>
+<hr />
+<h2 id="common-gotchas">Common Gotchas</h2>
+<table>
+<thead>
+<tr>
+<th>Gotcha</th>
+<th>Fix</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Forgot <code>await</code> on <code>getObject()</code></td>
+<td>Returns a Promise, not the object — always await</td>
+</tr>
+<tr>
+<td><code>login</code> event not firing</td>
+<td>Super admins are excluded — test with a non-admin account</td>
+</tr>
+<tr>
+<td>Calling <code>getObject()</code> multiple times</td>
+<td>Objects are singletons — cache the result in a variable</td>
+</tr>
+<tr>
+<td><code>setField</code> not persisting</td>
+<td>Must call <code>loan.save()</code> explicitly</td>
+</tr>
+<tr>
+<td>Wrong object ID casing</td>
+<td>IDs are case-sensitive — <code>"Loan"</code> fails, use <code>"loan"</code></td>
+</tr>
+<tr>
+<td>HTTP request blocked</td>
+<td>The <code>http</code> object only reaches pre-approved domains</td>
+</tr>
+<tr>
+<td><code>alert()</code> hanging the app</td>
+<td>Use <code>console.log()</code> or <code>console.warn()</code> instead</td>
+</tr>
+<tr>
+<td>Logging the auth token</td>
+<td>Security risk — log <code>!!token</code> (boolean) instead</td>
+</tr>
+<tr>
+<td><code>console.log(promise)</code></td>
+<td>Logs <code>Promise {}</code> — always <code>await</code> before logging</td>
+</tr>
+<tr>
+<td>Bare log with no label</td>
+<td>Use bracket tags like <code>[MyTool]</code> so logs are scannable</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="quick-reference-common-loan-field-ids">Quick Reference: Common Loan Field IDs</h2>
+<table>
+<thead>
+<tr>
+<th>Field ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td>Subject Property State</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Loan Purpose</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Purchase Price</td>
+</tr>
+<tr>
+<td>364</td>
+<td>Loan GUID</td>
+</tr>
+<tr>
+<td>1109</td>
+<td>Loan Amount</td>
+</tr>
+<tr>
+<td>1401</td>
+<td>Loan Program</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Interest Rate</td>
+</tr>
+<tr>
+<td>CX.*</td>
+<td>Custom Fields (prefix)</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h2 id="relationship-to-advanced-coding-vbnet-rules">Relationship to Advanced Coding (VB.NET Rules)</h2>
+<p>This skill covers <strong>JavaScript-based scripting</strong> in Custom Forms, Custom Tools,
+and Plugins. For <strong>VB.NET-based business rules</strong> (Field Triggers, Field Data Entry
+validation, Milestone Completion, Loan Form Printing), see the
+<code>encompass-advanced-coding</code> skill instead.</p>
+<table>
+<thead>
+<tr>
+<th>Feature</th>
+<th>Secure Scripting (this skill)</th>
+<th>Advanced Coding</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Language</td>
+<td>JavaScript</td>
+<td>VB.NET</td>
+</tr>
+<tr>
+<td>Context</td>
+<td>Custom Form / Tool / Plugin</td>
+<td>Business Rules engine</td>
+</tr>
+<tr>
+<td>Runs in</td>
+<td>Guest browser (Chromium)</td>
+<td>Server-side rule engine</td>
+</tr>
+<tr>
+<td>Can call APIs</td>
+<td>Yes (via http object)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Can modify UI</td>
+<td>Yes (DOM in guest)</td>
+<td>No</td>
+</tr>
+<tr>
+<td>Triggered by</td>
+<td>Events / page load</td>
+<td>Field changes, milestones</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>

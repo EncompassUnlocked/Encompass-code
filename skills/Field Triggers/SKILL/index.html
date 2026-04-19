@@ -1,0 +1,1415 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="Use this skill whenever the user wants to create, write, explain, or troubleshoot Advanced Coding rules in Encompass (by Ellie Mae / ICE Mortgage Technology). This includes Field Triggers, Field Data Entry validation, Milestone Completion conditions, Loan Form Printing rules, and Advanced Conditions. Trigger this skill any time the user mentions Encompass business rules, triggers, VB.NET in Encompass, custom conditions, field rules, or asks how to make a field auto-populate or validate in Encompass — even if they don't use the phrase "advanced coding."
+">
+      
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.7.6">
+    
+    
+      
+        <title>Encompass Advanced Coding for Business Rules - Encompass Unlocked</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.484c7ddc.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.ab4e12ef.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="teal" data-md-color-accent="teal">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#encompass-advanced-coding-for-business-rules" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="../../.." title="Encompass Unlocked" class="md-header__button md-logo" aria-label="Encompass Unlocked" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            Encompass Unlocked
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Encompass Advanced Coding for Business Rules
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+    
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="Search">
+        
+        <button type="reset" class="md-search__icon md-icon" title="Clear" aria-label="Clear" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            Initializing search
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="Tabs" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        
+  
+  
+    
+  
+  Home
+
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../web-code/button-clicks/button-hard-stop/" class="md-tabs__link">
+          
+  
+  
+  Web Code
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../field-triggers/encompass-timestamp-trigger/" class="md-tabs__link">
+          
+  
+  
+  Field Triggers
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../" class="md-tabs__link">
+          
+  
+  
+  Skills
+
+        </a>
+      </li>
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+<nav class="md-nav md-nav--primary md-nav--lifted" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="Encompass Unlocked" class="md-nav__button md-logo" aria-label="Encompass Unlocked" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M12 8a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3 3 3 0 0 0 3 3m0 3.54C9.64 9.35 6.5 8 3 8v11c3.5 0 6.64 1.35 9 3.54 2.36-2.19 5.5-3.54 9-3.54V8c-3.5 0-6.64 1.35-9 3.54"/></svg>
+
+    </a>
+    Encompass Unlocked
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Home
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Web Code
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Web Code
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button clicks
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Button clicks
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-hard-stop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button hard stop
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-click-standard-page/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button click to standard page
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-goto-tool/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button goto tool
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-field-update/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button field update
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-conditional-field-color/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button conditional field color
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/button-clicks/button-modal/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button modal
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field logging
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Field logging
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../web-code/field-logging/button-field-logging-audit-trail/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Button field logging and audit trail
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Triggers
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Field Triggers
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../field-triggers/encompass-timestamp-trigger/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Date & Time Stamp
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Using Skills with Claude
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Available Skills
+  
+
+    
+  </span>
+  
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            
+  
+    Available Skills
+  
+
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../field-triggers/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Field Triggers
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+<nav class="md-nav md-nav--secondary" aria-label="Table of contents">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      Table of contents
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#background-what-is-advanced-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Background: What Is Advanced Coding?
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#rule-types-that-support-advanced-coding" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Rule Types That Support Advanced Coding
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Rule Types That Support Advanced Coding">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#1-advanced-conditions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        1. Advanced Conditions
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#2-field-data-entry-validation-rules" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        2. Field Data Entry (Validation Rules)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#3-milestone-completion-advanced-conditions-tab" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        3. Milestone Completion (Advanced Conditions tab)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#4-loan-form-printing-print-suppression" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        4. Loan Form Printing (Print Suppression)
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#5-field-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        5. Field Triggers
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#working-with-milestones-tasks-and-documents-in-triggers" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Working with Milestones, Tasks, and Documents in Triggers
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#common-gotchas" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Common Gotchas
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#quick-reference-common-field-ids" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Quick Reference: Common Field IDs
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+
+<h1 id="encompass-advanced-coding-for-business-rules">Encompass Advanced Coding for Business Rules</h1>
+<p>This skill helps you write, explain, and troubleshoot Advanced Coding rules in Encompass.
+It is written for a mixed audience — Encompass admins who may not have a coding background
+as well as more technical users. Plain-English explanations are included alongside code examples.</p>
+<hr />
+<h2 id="background-what-is-advanced-coding">Background: What Is Advanced Coding?</h2>
+<p>Encompass has built-in "point and click" business rules for common scenarios (e.g., "apply
+this rule only for FHA loans"). When your scenario is more complex — comparing multiple
+fields, doing math, or reacting to user input — you use <strong>Advanced Coding</strong> instead.</p>
+<p>Advanced Coding is written in <strong>Visual Basic .NET (VB.NET)</strong>. You don't need to be a
+full developer, but you do need to follow the syntax carefully. The key concepts:</p>
+<ul>
+<li><strong>Field references</strong>: Use <code>[FieldID]</code> to read a field. Example: <code>[19]</code> is Loan Purpose.</li>
+<li><strong>Numeric fields</strong>: Use <code>[#FieldID]</code> to treat a field as a number. Example: <code>[#1109]</code> is Loan Amount as a number.</li>
+<li><strong>Date fields</strong>: Use <code>[@FieldID]</code> to treat a field as a date.</li>
+<li><strong>Custom fields</strong>: Prefix with <code>CX.</code> — e.g., <code>[CX.MYFIELD]</code>.</li>
+<li><strong>Setting a field value</strong> (triggers only): <code>[FieldID] = "value"</code></li>
+</ul>
+<hr />
+<h2 id="rule-types-that-support-advanced-coding">Rule Types That Support Advanced Coding</h2>
+<h3 id="1-advanced-conditions">1. Advanced Conditions</h3>
+<p>Used as the <em>condition</em> (the "when does this rule apply?") on any business rule.
+Must evaluate to <strong>True or False</strong>.</p>
+<p><strong>Where to find it:</strong> Any business rule → "Is there a condition?" → Yes → Select "Advanced Conditions"</p>
+<p><strong>Syntax examples:</strong></p>
+<pre><code class="language-vb">' Apply rule only for Purchase loans over $1,000,000 in NY or NJ
+[19] = &quot;Purchase&quot; And [#136] &gt; 999999 And ([14] = &quot;NY&quot; Or [14] = &quot;NJ&quot;)
+
+' Apply only for loans originated on or after Jan 1, 2010
+[@MS.START] &gt; #1/1/2010#
+
+' Different loan amount thresholds by state (CA vs. everywhere else)
+IIF([14] = &quot;CA&quot;, [#1109] &gt; 200000, [#1109] &gt; 300000)
+
+' Apply when loan amount exceeds $500,000
+[#1109] &gt; 500000
+</code></pre>
+<blockquote>
+<p><strong>Plain English tip:</strong> Think of this like a filter — the rule only "turns on" when
+your expression is True. If there's any error in the code, the rule is skipped entirely.</p>
+</blockquote>
+<hr />
+<h3 id="2-field-data-entry-validation-rules">2. Field Data Entry (Validation Rules)</h3>
+<p>Used to <strong>validate what a user types</strong> into a specific field before saving it.
+- Only available when the rule has <strong>no other conditions</strong> (set condition to "No - Always apply").
+- Runs <em>before</em> the field value is saved.
+- Use <code>Value</code> to refer to what the user just typed.
+- Call <code>Fail("your message")</code> to reject the input and show the user a message.</p>
+<p><strong>Where to find it:</strong> Settings → Business Rules → Field Data Entry → New → Value Rule tab → Advanced Coding</p>
+<p><strong>Key functions:</strong>
+| Function | What it does |
+|----------|-------------|
+| <code>Value</code> | The text the user just typed into the field |
+| <code>XDec(Value)</code> | Converts Value to a decimal number safely |
+| <code>Fail("message")</code> | Rejects the input and shows the message to the user |
+| <code>[#FieldID]</code> | Reads another field as a number |</p>
+<p><strong>Example — Reject if custom field exceeds loan amount:</strong></p>
+<pre><code class="language-vb">If XDec(Value) &gt; [#1109] Then
+    Fail(&quot;This field's value cannot exceed the amount of the loan.&quot;)
+End If
+</code></pre>
+<p><strong>Example — Different limits by loan program:</strong></p>
+<pre><code class="language-vb">Select Case [1401]
+    Case &quot;5/1 ARM&quot;
+        If XDec(Value) &gt; 650000 Then
+            Fail(&quot;Loan amount cannot exceed $650,000 for a 5/1 ARM.&quot;)
+        End If
+    Case &quot;3/1 ARM&quot;
+        If Value &lt;&gt; &quot;&quot; And XDec(Value) &lt; 30000 Then
+            Fail(&quot;Loan amount must be at least $30,000 for a 3/1 ARM.&quot;)
+        End If
+    Case &quot;30 Year Fixed&quot;
+        If XDec(Value) &gt; 450000 Then
+            Fail(&quot;Loan amount cannot exceed $450,000 for a 30 Year Fixed.&quot;)
+        End If
+End Select
+</code></pre>
+<p><strong>Example — Sum multiple GFE fee fields and compare:</strong></p>
+<pre><code class="language-vb">Dim sum As Decimal = 0
+Dim i As Integer
+Dim fieldIds As String() = New String() {&quot;454&quot;, &quot;1093&quot;, &quot;640&quot;, &quot;641&quot;, &quot;329&quot;, &quot;L228&quot;, &quot;L230&quot;}
+For i = 0 To fieldIds.Length - 1
+    sum = sum + XDec(Fields(fieldIds(i)))
+Next
+If XDec(Value) &gt; sum Then
+    Fail(&quot;The discount value cannot exceed the sum of the prepaid charges.&quot;)
+End If
+</code></pre>
+<blockquote>
+<p><strong>Plain English tip:</strong> If your code finishes without calling <code>Fail()</code>, Encompass
+considers the value valid and saves it. If any unexpected error occurs, the validation
+<em>fails automatically</em> and the user sees a generic error.</p>
+</blockquote>
+<hr />
+<h3 id="3-milestone-completion-advanced-conditions-tab">3. Milestone Completion (Advanced Conditions tab)</h3>
+<p>Used to enforce <strong>extra requirements before a milestone can be completed</strong>.
+Uses the same <code>Fail("message")</code> pattern as Field Data Entry.</p>
+<p><strong>Where to find it:</strong> Settings → Business Rules → Milestone Completion → New →
+Advanced Conditions tab → Add</p>
+<p><strong>Example — Require 2+ years at current address before completing Qualification:</strong></p>
+<pre><code class="language-vb">If [#FR0112] &lt; 2 Then
+    Fail(&quot;At least 2 years of residence is required to complete the milestone.&quot;)
+End If
+</code></pre>
+<hr />
+<h3 id="4-loan-form-printing-print-suppression">4. Loan Form Printing (Print Suppression)</h3>
+<p>Used to <strong>block printing a form</strong> until certain conditions are met.
+Same <code>Fail()</code> pattern applies.</p>
+<p><strong>Where to find it:</strong> Settings → Business Rules → Loan Form Printing → New →
+Print Form Suppression Rule → Advanced Coding tab</p>
+<hr />
+<h3 id="5-field-triggers">5. Field Triggers</h3>
+<p>Triggers <strong>run automatically after a field value changes</strong> and can read/write other
+fields in the loan. This is the most powerful rule type.</p>
+<p><strong>Where to find it:</strong> Settings → Business Rules → Field Triggers → New →
+Action section → "Run advanced code"</p>
+<p><strong>Trigger code receives three parameters automatically:</strong>
+| Parameter | Meaning |
+|-----------|---------|
+| <code>FieldID</code> | The ID of the field that was just changed |
+| <code>PriorValue</code> | What the field contained before the change |
+| <code>NewValue</code> | What the field was just changed to |</p>
+<p><strong>Key concepts unique to triggers:</strong></p>
+<ul>
+<li><strong>Setting a field:</strong> <code>[FieldID] = "new value"</code> (same bracket notation, but on the left side)</li>
+<li><strong>IgnoreValidationErrors:</strong> Add this as the first line to bypass field-level restrictions
+  that might block your trigger from writing to certain fields.</li>
+<li><strong>No infinite loops:</strong> If a trigger changes a field that would re-fire the same trigger,
+  Encompass automatically prevents it from running a second time.</li>
+</ul>
+<p><strong>Example — Set Broker Company Name based on property state:</strong></p>
+<pre><code class="language-vb">If [14] = &quot;CA&quot; Then
+    [315] = &quot;California Mortgage Corp&quot;
+ElseIf [14] = &quot;NV&quot; Then
+    [315] = &quot;Nevada Home Lending&quot;
+Else
+    [315] = &quot;US Mortgages&quot;
+End If
+</code></pre>
+<p><strong>Example — Calculate a custom profit field, double it for refis:</strong></p>
+<pre><code class="language-vb">IgnoreValidationErrors
+[CX.MYPROFIT] = [#1109] * [#3] * 0.02 / 100.0
+If [19] = &quot;NoCashOutRefi&quot; Then
+    [CX.MYPROFIT] = 2 * [#CX.MYPROFIT]
+End If
+</code></pre>
+<p><strong>Example — Use a document receipt date to set a custom field:</strong></p>
+<pre><code class="language-vb">If [@Document.DateReceived.Credit Report] &gt; #3/15/2010# Then
+    [CX.REPORTDATE] = [Document.DateReceived.Credit Report]
+End If
+</code></pre>
+<hr />
+<h2 id="working-with-milestones-tasks-and-documents-in-triggers">Working with Milestones, Tasks, and Documents in Triggers</h2>
+<p>When you need to check or update things beyond fields (milestones, tasks, documents),
+use these built-in functions:</p>
+<p><strong>Milestone functions:</strong>
+| Function | What it does |
+|----------|-------------|
+| <code>Milestones.IsComplete("Name")</code> | Returns True if that milestone is done |
+| <code>Milestones.SetComplete("Name")</code> | Marks the milestone as complete |</p>
+<p><strong>Task functions:</strong>
+| Function | What it does |
+|----------|-------------|
+| <code>Tasks.Exists("Title")</code> | True if the task exists in the loan |
+| <code>Tasks.IsComplete("Title")</code> | True if the task is marked complete |
+| <code>Tasks.SetComplete("Title", True)</code> | Marks the task complete |</p>
+<p><strong>Document functions:</strong>
+| Function | What it does |
+|----------|-------------|
+| <code>Documents.Exists("Title")</code> | True if the document is in the loan |
+| <code>Documents.IsReceived("Title")</code> | True if the document has been received |
+| <code>Documents.IsOrdered("Title")</code> | True if the document has been ordered |
+| <code>Documents.IsExpired("Title")</code> | True if the document has expired |</p>
+<p><strong>Example — Mark a task complete when a document is received:</strong></p>
+<pre><code class="language-vb">If Documents.IsReceived(&quot;Credit Report&quot;) Then
+    Tasks.SetComplete(&quot;Pull borrower credit&quot;)
+End If
+</code></pre>
+<hr />
+<h2 id="common-gotchas">Common Gotchas</h2>
+<ul>
+<li><strong>Don't use MsgBox()</strong> or any pop-up UI functions — Encompass runs rules in non-interactive
+  contexts (like API calls) and the application will hang. Use <code>Fail()</code> for messages instead.</li>
+<li><strong>Value is always a string</strong> — even for number fields. Always use <code>XDec(Value)</code> before
+  doing math on it.</li>
+<li><strong>Virtual field IDs are read-only</strong> — you can read <code>[Document.DateReceived.Credit Report]</code>
+  but cannot assign to it. Use the Document/Task/Milestone functions to make changes.</li>
+<li><strong>Errors = rule skipped</strong> — for conditions, any code error causes the rule to be ignored.
+  For validation rules, errors cause the validation to fail.</li>
+</ul>
+<hr />
+<h2 id="quick-reference-common-field-ids">Quick Reference: Common Field IDs</h2>
+<table>
+<thead>
+<tr>
+<th>Field ID</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>14</td>
+<td>Subject Property State</td>
+</tr>
+<tr>
+<td>19</td>
+<td>Loan Purpose</td>
+</tr>
+<tr>
+<td>136</td>
+<td>Purchase Price</td>
+</tr>
+<tr>
+<td>315</td>
+<td>Broker Company Name</td>
+</tr>
+<tr>
+<td>1109</td>
+<td>Loan Amount</td>
+</tr>
+<tr>
+<td>1401</td>
+<td>Loan Program</td>
+</tr>
+<tr>
+<td>3</td>
+<td>Interest Rate</td>
+</tr>
+<tr>
+<td>FR0112</td>
+<td>Years at Present Address</td>
+</tr>
+<tr>
+<td>MS.START</td>
+<td>File Started Date</td>
+</tr>
+<tr>
+<td>CX.*</td>
+<td>Custom Fields (prefix)</td>
+</tr>
+</tbody>
+</table>
+
+
+
+
+
+
+
+  
+  
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate": null, "base": "../../..", "features": ["navigation.tabs", "navigation.top", "content.code.copy"], "search": "../../../assets/javascripts/workers/search.2c215733.min.js", "tags": null, "translations": {"clipboard.copied": "Copied to clipboard", "clipboard.copy": "Copy to clipboard", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.placeholder": "Type to start searching", "search.result.term.missing": "Missing", "select.version": "Select version"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.79ae519e.min.js"></script>
+      
+    
+  </body>
+</html>
