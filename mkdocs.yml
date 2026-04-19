@@ -22,6 +22,8 @@ nav:
           - Button modal: web-code/button-clicks/button-modal.md
       - Field logging:
           - Button field logging and audit trail: web-code/field-logging/button-field-logging-audit-trail.md
+  - Field Triggers:
+      - Date & Time Stamp: field-triggers/encompass-timestamp-trigger.md
   - Skills:
       - Using Skills with Claude: skills/index.md
       - Available Skills:
