@@ -27,4 +27,8 @@ nav:
   - Skills:
       - Using Skills with Claude: skills/index.md
       - Available Skills:
-          - Field Triggers: skills/field-triggers.md
+          - Field Triggers: skills/Field Triggers/SKILL.md
+          - Custom Field Code: skills/Custom Field Code/SKILL.md
+          - Encompass Scripting Framework: skills/encompass-scripting-framework/SKILL.md
+          - EMPKG Package Editor: skills/empkg/SKILL.md
+          - Product Self-Knowledge: skills/product-self-knowledge/SKILL.md
