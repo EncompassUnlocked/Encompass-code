@@ -1,4 +1,4 @@
-# Log Buttons – Episode 1
+# Log Button Episode 1
 
 A walkthrough of building a comment log button in the Encompass Desktop Input Form Builder. The button captures a comment, stamps it with a DST-safe Central Time timestamp and the current user's name, and prepends it to a custom log field — so the newest entry always appears at the top.
 
