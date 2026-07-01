@@ -32,11 +32,17 @@ These rules are enforced by Encompass at import time. Violations cause fields to
 | Max character length | 29 chars | `CX.ELEVATE.DSCLTV.STATUS` ✅ |
 | Prefix | Must start with `CX.` | `CX.EMBARK.LTV.STATUS` ✅ |
 
+> **No dot-count rule.** Encompass does not restrict how many `.`-separated
+> segments a field ID has — only the 29-char limit and the `CX.` prefix are
+> actually enforced. The 3-segment pattern below is just this project's own
+> naming convention for readability, not something Encompass checks.
+
 **Common mistakes:**
 
 - `CX.ELEVATE.DSCR.LTV.OVERRIDE` — 30 chars ❌ → shorten to `CX.ELEVATE.DSCLTV.OVERRIDE` ✅
+  (the fix works by merging segments, but the actual violation was the character count, not the number of segments)
 
-**Field naming convention:**
+**Field naming convention (project style, not an Encompass rule):**
 ```
 CX.{PRODUCT}.{DOCTYPE+SECTION}.{SUFFIX}
 ```
@@ -59,7 +65,7 @@ unzip -p MyPackage.empkg manifest.xml | grep "Field id"
 # Count fields
 unzip -p MyPackage.empkg manifest.xml | grep -c "Field id"
 
-# Check field dot counts and lengths
+# Check field ID lengths (the actual enforced limit is 29 chars)
 unzip -p MyPackage.empkg manifest.xml | grep "Field id" \
   | sed 's/.*id="//;s/".*//' \
   | awk '{print length, $0}' | sort -rn | head -20
@@ -88,10 +94,30 @@ Fields are declared inside `<CustomFieldList>...</CustomFieldList>`.
 
 **Field type reference:**
 
-| Type | Usage |
-|---|---|
-| `STRING` | Text output fields — always add `maxlength` |
-| `Y/N` | Checkbox override fields — no maxlength needed |
+| Type | Usage | maxlength? |
+|---|---|---|
+| `STRING` | Text output fields | Always add `maxlength` |
+| `Y/N` | Checkbox override fields | Not needed |
+| `NUMERIC` | Whole/decimal number fields | Optional — add if the value has a known max digit count |
+| `CURRENCY` | Dollar-amount fields | Optional |
+| `PERCENT` | Percentage fields | Optional |
+| `DATE` | Date-picker fields | Not needed |
+| `MEMO` | Long free-text fields (bigger than `STRING`) | Always add `maxlength` (typically 2000+) |
+| `PULLDOWN` | Dropdown/combo list fields | Not needed — options are defined separately |
+
+> `STRING` and `Y/N` are confirmed against real UW Matrix packages in this
+> project. The other types follow Encompass's standard Field Manager type
+> set — verify the exact `type=` token (and, for `PULLDOWN`, the option-list
+> syntax) against a real exported `manifest.xml` before shipping a package
+> that uses one for the first time.
+
+**Example — additional types:**
+```xml
+<Field id="CX.PRODUCT.DSCLTV.RATIO"  desc="Product DSCR Matrix: DSCR Ratio"     type="NUMERIC"  maxlength="10" />
+<Field id="CX.PRODUCT.DSCLTV.RESERVE" desc="Product DSCR Matrix: Reserve Amount" type="CURRENCY" />
+<Field id="CX.PRODUCT.DSCLTV.MARGIN"  desc="Product DSCR Matrix: Rate Margin"    type="PERCENT" />
+<Field id="CX.PRODUCT.DSCLTV.ASOFDATE" desc="Product DSCR Matrix: As-Of Date"    type="DATE" />
+```
 
 **Template for a full section set (STATUS + OVERRIDE + ORNOTE):**
 ```xml
@@ -111,8 +137,8 @@ content = content.replace('  </CustomFieldList>', new_fields + '  </CustomFieldL
 ```bash
 unzip -p MyPackage.empkg manifest.xml | grep "Field id" \
   | sed 's/.*id="//;s/".*//' \
-  | awk -F'.' '{print NF-1, $0}' | sort -rn | head -10
-# All new fields should show 3 in the first column
+  | awk '{print length, $0}' | sort -rn | head -10
+# All new fields should be ≤29 chars and start with CX.
 ```
 
 ---
@@ -209,7 +235,7 @@ For UW Matrix packages, each product × doc type combination needs this standard
 
 | Symptom | Cause | Fix |
 |---|---|---|
-| Fields not appearing after import | 4-dot field IDs or >29 chars | Merge doc+section segment, recount |
+| Fields not appearing after import | Missing `CX.` prefix or >29 chars | Recount characters, shorten segment names |
 | Fields appear but wrong panel writes to them | Multiple panels share same `emid` | Remap DSCR panel controls to DSC-prefixed fields |
 | Wrong data in a panel | Panel control points to another product's field | Check `emid=` attributes with panel-scoped grep |
 | Import succeeds but no new fields | Old `.empkg` version re-imported | Delete old package, reimport fresh download |
@@ -225,7 +251,7 @@ For UW Matrix packages, each product × doc type combination needs this standard
 - [ ] Extract `.emfrm` → get `FORM.htm`
 - [ ] Check all existing field dot counts and lengths
 - [ ] Add new fields to `manifest.xml` (inside `<CustomFieldList>`)
-- [ ] Verify new fields: 3 dots, ≤29 chars
+- [ ] Verify new fields: ≤29 chars, starts with `CX.`
 - [ ] Remap `FORM.htm` controls using panel-scoped replacement
 - [ ] Verify target panel remapped, other panels untouched
 - [ ] Repack `.emfrm` first, then `.empkg`
