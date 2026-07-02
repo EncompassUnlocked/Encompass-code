@@ -1,0 +1,8 @@
+{
+  "name": "encompass-unlocked",
+  "description": "Claude skills for ICE Encompass admins: Advanced Coding business rules, loan custom field calculations, Secure Scripting Framework web code, and .empkg package editing.",
+  "version": "1.0.0",
+  "author": { "name": "Beth — Encompass Unlocked" },
+  "homepage": "https://encompassunlocked.github.io/Encompass-code/",
+  "keywords": ["encompass", "ellie-mae", "ice-mortgage", "mortgage", "loan"]
+}

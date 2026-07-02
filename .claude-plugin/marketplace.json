@@ -1,0 +1,15 @@
+{
+  "name": "encompass-unlocked",
+  "owner": { "name": "EncompassUnlocked" },
+  "metadata": {
+    "description": "Encompass admin skills for Claude — business rules, custom fields, scripting, and .empkg tools.",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "encompass-unlocked",
+      "source": "./",
+      "description": "All Encompass Unlocked skills: field triggers, custom field code, scripting framework, empkg editor."
+    }
+  ]
+}
