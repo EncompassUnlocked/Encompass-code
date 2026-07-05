@@ -1,0 +1,35 @@
+# Encompass Unlocked
+
+> A community library of ICE Encompass (Ellie Mae) code and Claude AI skills: business rules, custom field calculations, web form scripting, and automation examples. Maintained by an Encompass admin for Encompass admins.
+
+Site: https://encompassunlocked.github.io/Encompass-code/
+Repo: https://github.com/EncompassUnlocked/Encompass-code
+Plugin install (Claude Code): /plugin marketplace add EncompassUnlocked/Encompass-code
+
+## Web Code (Secure Scripting Framework, JavaScript)
+
+- [Button hard stop](https://encompassunlocked.github.io/Encompass-code/web-code/button-clicks/button-hard-stop/): block progression until conditions are met
+- [Button click to standard page](https://encompassunlocked.github.io/Encompass-code/web-code/button-clicks/button-click-standard-page/): navigate to a standard form
+- [Button goto tool](https://encompassunlocked.github.io/Encompass-code/web-code/button-clicks/button-goto-tool/): navigate to an Encompass tool
+- [Button field update](https://encompassunlocked.github.io/Encompass-code/web-code/button-clicks/button-field-update/): set field values on click
+- [Button conditional field color](https://encompassunlocked.github.io/Encompass-code/web-code/button-clicks/button-conditional-field-color/): color fields based on loan data
+- [Button modal](https://encompassunlocked.github.io/Encompass-code/web-code/button-clicks/button-modal/): show modal dialogs
+- [Button field logging and audit trail](https://encompassunlocked.github.io/Encompass-code/web-code/field-logging/button-field-logging-audit-trail/): track who changed what and when
+
+## Field Triggers (Advanced Coding, VB.NET)
+
+- [Date & Time Stamp trigger](https://encompassunlocked.github.io/Encompass-code/field-triggers/encompass-timestamp-trigger/): stamp date/time when a field changes
+
+## Claude Skills (raw SKILL.md sources)
+
+- [encompass-field-triggers](https://raw.githubusercontent.com/EncompassUnlocked/Encompass-code/main/skills/encompass-field-triggers/SKILL.md): Advanced Coding rules — triggers, validation, milestone conditions
+- [encompass-loan-custom-fields](https://raw.githubusercontent.com/EncompassUnlocked/Encompass-code/main/skills/encompass-loan-custom-fields/SKILL.md): Loan Custom Field calculations — IIF, date math, safe operators
+- [encompass-scripting-framework](https://raw.githubusercontent.com/EncompassUnlocked/Encompass-code/main/skills/encompass-scripting-framework/SKILL.md): Secure Scripting Framework — custom forms, tools, plugins
+- [empkg](https://raw.githubusercontent.com/EncompassUnlocked/Encompass-code/main/skills/empkg/SKILL.md): .empkg package creation and repair
+- [product-self-knowledge](https://raw.githubusercontent.com/EncompassUnlocked/Encompass-code/main/skills/product-self-knowledge/SKILL.md): current Claude model/product reference
+
+## Notes for AI agents
+
+- Encompass web code uses async/await JavaScript with `const loan = await elli.script.getObject("loan")`.
+- Advanced Coding uses VB.NET with `[fieldID]` refs, `[#field]` numeric, `[@field]` date, `CX.*` custom fields.
+- Never invent Encompass field IDs; every page includes complete, copy-paste-ready code.
