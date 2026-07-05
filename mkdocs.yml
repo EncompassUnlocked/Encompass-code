@@ -1,5 +1,7 @@
 site_name: Encompass Unlocked
-site_description: A community library of Encompass web code and tutorials
+site_url: https://encompassunlocked.github.io/Encompass-code/
+site_description: Free Encompass code, guides, and Claude AI skills — business rules, web form scripting, field triggers, and automation examples for Encompass admins.
+site_author: Beth Bastian
 theme:
   name: material
   palette:
@@ -24,13 +26,15 @@ nav:
           - Button field logging and audit trail: web-code/field-logging/button-field-logging-audit-trail.md
   - Field Triggers:
       - Date & Time Stamp: field-triggers/encompass-timestamp-trigger.md
-  - YouTube Notes:
-      - Log Button Episode 1: log-buttons/episode-1.md
+  # Un-comment when the YouTube channel is live:
+  # - YouTube Notes:
+  #     - Log Button Episode 1: log-buttons/episode-1.md
   - Skills:
       - Using Skills with Claude: skills/index.md
       - Available Skills:
-          - Field Triggers: skills/Field Triggers/SKILL.md
-          - Custom Field Code: skills/Custom Field Code/SKILL.md
-          - Encompass Scripting Framework: skills/encompass-scripting-framework/SKILL.md
-          - EMPKG Package Editor: skills/empkg/SKILL.md
-          - Product Self-Knowledge: skills/product-self-knowledge/SKILL.md
+          - Field Triggers (Advanced Coding): skills/encompass-field-triggers.md
+          - Loan Custom Field Code: skills/encompass-loan-custom-fields.md
+          - Scripting Framework: skills/encompass-scripting-framework.md
+          - EMPKG Package Editor: skills/empkg.md
+          - Product Self-Knowledge: skills/product-self-knowledge.md
+  - Disclaimer: disclaimer.md

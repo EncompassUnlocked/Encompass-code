@@ -1,4 +1,8 @@
-# Encompass Field Trigger: Date & Time Stamp with Time Zone
+---
+description: VB.NET field trigger for Encompass Advanced Coding that stamps a date and time converted to your local time zone into custom fields.
+---
+
+# How to Write a Time-Zone-Aware Date & Time Stamp Field Trigger in Encompass (Advanced Coding)
 
 ## Overview
 

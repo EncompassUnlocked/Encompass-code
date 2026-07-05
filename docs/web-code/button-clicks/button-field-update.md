@@ -1,4 +1,8 @@
-# Button: Field update
+---
+description: A simple Encompass web form button script that writes a value into a field and saves the loan — copy, paste, and adapt.
+---
+
+# How to Update a Field Value with a Button Click in Encompass Web Forms
 
 A simple button click script that writes a value directly into an Encompass 
 field. When clicked, the button sets a specified field to a predetermined 

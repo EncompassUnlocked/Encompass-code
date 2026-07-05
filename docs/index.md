@@ -1,3 +1,7 @@
+---
+description: Free Encompass code, guides, and Claude AI skills — business rules, web form scripting, field triggers, and automation — built by an Encompass admin, for Encompass admins.
+---
+
 # Welcome to Encompass Unlocked
 
 You found it — a community built by an Encompass admin, for Encompass admins.
@@ -62,6 +66,15 @@ implement these customizations in your own Encompass environment.
 
 ---
 
+## Get More Encompass Unlocked
+
+- 📘 **The book:** [*Micro Vibe Coding for Mortgage Professionals*](https://www.amazon.com/Micro-Vibe-Coding-Mortgage-Professionals-ebook/dp/B0GMMBL95B) — the full method behind everything on this site
+- 💼 **Connect on LinkedIn:** [Beth Bastian](https://www.linkedin.com/in/bethbastian/) — Encompass tips and automation content every week
+- 🎥 **As featured by ICE Mortgage Technology** — blog interview and video <!-- TODO: add the ICE blog + video URLs -->
+- 📬 **Newsletter (coming soon):** one Encompass tip, one AI tip, every other week <!-- TODO: replace with your Kit/Beehiiv embed or signup link -->
+
+---
+
 ## You've Got This
 
 If I can build this without a coding background, so can you. Dig into the 
@@ -71,3 +84,7 @@ this got built in the first place.
 Welcome to the community.
 
 — Beth
+
+---
+
+*All code on this site is free to use under the [MIT License](https://github.com/EncompassUnlocked/Encompass-code/blob/main/LICENSE). Please read the [disclaimer](disclaimer.md) before using anything in your environment — and always test in a sandbox first.*

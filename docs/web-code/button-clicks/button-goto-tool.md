@@ -1,4 +1,8 @@
-# Button: Goto tool — navigate to Conversation Log
+---
+description: Encompass web form button script that navigates the user straight to a built-in tool like the Conversation Log.
+---
+
+# How to Make a Button Open the Conversation Log (or Any Tool) in Encompass Web Forms
 
 A convenience shortcut button that instantly navigates the user to the 
 Conversation Log — a built-in Encompass tool used to track and record 

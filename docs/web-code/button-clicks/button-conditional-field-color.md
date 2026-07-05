@@ -1,4 +1,8 @@
-# Button: Conditional field color
+---
+description: Encompass web form script that writes a value into a field and conditionally changes its color to flag it visually.
+---
+
+# How to Change a Field's Color Based on Loan Data in Encompass Web Forms
 
 A button click script that does two things at once — writes a value into 
 an Encompass field AND changes the color of that field on the form. This is 

@@ -1,4 +1,8 @@
-# Button: Field Logging – Audit Trail
+---
+description: Encompass web form script that logs the user, timestamp, and change into a custom audit trail field for overrides and exceptions.
+---
+
+# How to Build a Field-Level Audit Trail in Encompass Web Forms (Who Changed What, and When)
 
 A button click script that captures who bypassed or modified a field, stamps a 
 timestamp, and writes a formatted log entry into a custom audit trail field. Use 

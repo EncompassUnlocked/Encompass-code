@@ -1,4 +1,8 @@
-# Check Lock Status and Stamp Closure Date
+---
+description: Encompass web form button script that checks rate lock status (field 2400) and blocks the action or stamps a closure date into a custom field.
+---
+
+# How to Add a Hard-Stop Button in Encompass Web Forms (Check Lock Status Before Stamping a Date)
 
 This button checks whether a loan is currently locked before stamping today's 
 date into a custom field. If the loan is locked, it alerts the user to transfer 
@@ -42,8 +46,6 @@ async function Button2_click(ctrl) {
 3. Paste this code into the button's click event handler
 4. Update `CX.CLOSED.FOR.INCOMPLETENESS` to match your actual custom field ID if different
 5. Save and test by opening a locked loan and an unlocked loan to verify both paths work
-
-## Notes
 
 ## Notes
 

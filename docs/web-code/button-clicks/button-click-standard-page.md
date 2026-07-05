@@ -1,5 +1,8 @@
+---
+description: Encompass web form button script that jumps the user to a standard built-in form, like the Settlement Service Provider List.
+---
 
-# Button: Navigate to Settlement Service Provider List
+# How to Navigate to a Standard Form with a Button in Encompass Web Forms
 
 When triggered, this button instantly navigates the user to the Settlement 
 Service Provider List — a standard built-in form within Encompass — eliminating 

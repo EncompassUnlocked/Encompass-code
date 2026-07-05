@@ -21,4 +21,14 @@ jobs:
 
       - run: pip install mkdocs-material
 
+      # Package each skill folder into a downloadable .skill file
+      - name: Build .skill downloads
+        run: |
+          mkdir -p docs/skills/downloads
+          cd skills
+          for d in */; do
+            name="${d%/}"
+            (cd "$name" && zip -r "../../docs/skills/downloads/${name}.skill" .)
+          done
+
       - run: mkdocs gh-deploy --force

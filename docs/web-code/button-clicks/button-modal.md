@@ -1,4 +1,8 @@
-# Button: Modal
+---
+description: Encompass web form button script that opens another form in a modal window so users stay in context.
+---
+
+# How to Open a Form in a Modal Popup in Encompass Web Forms
 
 A button click script that opens an Encompass form inside a modal (popup) 
 window. This is useful for displaying additional forms or information 
